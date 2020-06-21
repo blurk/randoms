@@ -1,0 +1,841 @@
+@import url("https://fonts.googleapis.com/css2?family=Clicker+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap");
+
+$font-stack-main: "Clicker Script", cursive;
+$font-stack-side: "Source Sans Pro", sans-serif;
+$text-active: rgba(255, 255, 255, 1);
+$text-active-less: rgba(255, 255, 255, 0.75);
+$text-not-active: rgba(255, 255, 255, 0.5);
+$my-blue: #13afff;
+$light-black: #7f7f7f;
+$my-blue-more: #00ccff;
+$my-blue-less: #1c96ff;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.flex-column {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-img {
+  max-width: 220px;
+  max-height: 220px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+}
+
+#header {
+  height: 20vh;
+  padding-left: 60px;
+  padding-right: 60px;
+  background-color: #eef;
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  nav {
+    .logo {
+      float: left;
+      margin-top: 20px;
+      a {
+        color: $my-blue-less;
+        font-weight: 500;
+        font-size: 60px;
+        font-family: $font-stack-main;
+        transition: all 0.3s ease-in-out 0s;
+      }
+
+      &:hover {
+        a {
+          color: $my-blue-more;
+          font-size: 62px;
+        }
+      }
+    }
+
+    .menu {
+      float: right;
+      padding-left: 15px;
+      padding-right: 50px;
+      margin-top: 25px;
+
+      li {
+        display: inline-block;
+        padding: 25px 15px;
+        position: relative;
+
+        a {
+          font-weight: 400;
+          font-size: 20px;
+          color: $my-blue-less;
+          font-family: $font-stack-side;
+          transition: all 0.3s ease-in-out 0s;
+
+          &::after {
+            content: "";
+            width: calc(100% - 30px);
+            position: absolute;
+            background-color: $my-blue-more;
+            height: 2px;
+            bottom: 22px;
+            left: 15px;
+            right: 15px;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out 0s;
+          }
+        }
+        &:hover {
+          a {
+            color: $my-blue-more;
+            &::after {
+              visibility: visible;
+              transform: scaleX(1);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #chk {
+    display: none;
+    transition: all 0.4s;
+    cursor: pointer;
+  }
+
+  .navbar li a:hover,
+  #chk:hover {
+    color: $my-blue-more;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  #header {
+    height: 80px;
+    .container {
+      .logo {
+        margin-top: 15px;
+        margin-left: -60px;
+        a {
+          font-size: 40px;
+        }
+      }
+
+      #chk {
+        display: block;
+        position: absolute;
+        z-index: 11;
+        top: 30px;
+        right: 35px;
+        i {
+          transition: all 0.3s ease-in-out 0s;
+          color: $my-blue-less;
+          font-size: 30px;
+        }
+        &:hover {
+          i {
+            color: $my-blue-more;
+          }
+        }
+      }
+
+      .menu {
+        z-index: 10;
+        padding: 80px 0;
+        position: fixed;
+        width: 100%;
+        height: 150vh;
+        background: $text-active;
+        right: 0;
+        top: -200vh;
+        display: flex;
+        text-align: center;
+        line-height: normal;
+        transition: all 0.6s ease;
+        display: block;
+
+        li {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+#preview {
+  background: url("./assets/img/header-bg.jpg") rgba(0, 0, 0, 0.4) no-repeat
+    fixed center/cover;
+  background-blend-mode: multiply;
+  position: relative;
+  height: 100vh;
+
+  .hero {
+    width: 100%;
+    padding-top: 50px;
+
+    #hero-img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h1 {
+      font-weight: 600;
+      font-size: 80px;
+      color: #fff;
+      font-family: $font-stack-main;
+    }
+
+    h2,
+    h3 {
+      font-weight: 600;
+      letter-spacing: 10px;
+      font-size: 40px;
+      color: #eee;
+      font-family: $font-stack-side;
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  #preview {
+    .hero {
+      h1 {
+        font-size: 60px;
+      }
+
+      h2,
+      h3 {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+#introduce {
+  .introduce-head {
+    .hero-img {
+      margin: 50px auto;
+    }
+    h1 {
+      font-family: $font-stack-main;
+      color: $my-blue;
+      font-weight: 400;
+      font-size: 50px;
+      line-height: 1.5;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+
+    p {
+      color: $light-black;
+      font-weight: 400;
+      font-family: $font-stack-side;
+      line-height: 1.8;
+      font-size: 18px;
+      margin: 30px;
+    }
+  }
+
+  .introduce-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    width: calc(100% * 8 / 12);
+
+    .flex-column {
+      width: calc(100% * 5 / 12);
+      border-radius: 10px;
+      margin: 30px auto;
+      padding: 30px 50px;
+
+      img {
+        height: 220px;
+        width: 220px;
+        border-radius: 50%;
+      }
+
+      .introduce-content {
+        padding: 50px;
+        color: $my-blue;
+        h1 {
+          font-family: $font-stack-main;
+          font-weight: 500;
+          font-size: 40px;
+          white-space: nowrap;
+          margin: 20px auto 10px auto;
+        }
+
+        span {
+          font-size: 15px;
+          letter-spacing: 10px;
+          text-transform: uppercase;
+          border: 1px solid $my-blue;
+          padding: 2px 5px;
+        }
+      }
+    }
+
+    h2 {
+      width: calc(100% * 2 / 12);
+      text-align: center;
+      padding-left: 30px;
+      padding-right: 30px;
+      img {
+        width: 95px;
+        height: 95px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  #introduce {
+    .introduce-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 50px;
+
+      .flex-column {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        padding: 15px 30px;
+
+        img {
+          max-width: 100%;
+          max-height: 180px;
+        }
+        .introduce-content {
+          margin: 5px auto;
+          padding: 5px;
+          text-align: center;
+        }
+      }
+
+      h2 {
+        width: 100%;
+        img {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+
+#count-down {
+  background: url("./assets/img/count-down-bg.jpg") rgba(0, 0, 0, 0.4) no-repeat
+    fixed center/cover;
+  background-blend-mode: multiply;
+
+  .container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+
+    .count-down-text {
+      h1 {
+        font-family: $font-stack-main;
+        color: $text-active;
+        font-weight: 400;
+        font-size: 80px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      h3 {
+        font-family: $font-stack-side;
+        color: $text-active-less;
+        font-size: 30px;
+        padding-bottom: 20px;
+      }
+    }
+
+    #count-down-clock {
+      width: calc(100% * 8 / 12);
+      font-family: $font-stack-main;
+      color: $text-active;
+      font-size: 80px;
+      margin: 30px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        display: inline-block;
+        margin: 0 30px;
+        small {
+          display: block;
+          font-family: $font-stack-side;
+          letter-spacing: 10px;
+          text-transform: uppercase;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  #count-down {
+    width: 100%;
+    .container {
+      .count-down-text {
+        h1 {
+          font-size: 60px;
+        }
+
+        h3 {
+          font-size: 20px;
+        }
+      }
+
+      #count-down-clock {
+        flex-direction: column;
+
+        span {
+          font-size: 60px;
+          small {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#groom-bride {
+  .gb-intro {
+    margin-top: 50px;
+    img {
+      margin-top: 100px;
+      width: 200px;
+      height: 200px;
+    }
+    h1 {
+      font-family: $font-stack-main;
+      color: $my-blue;
+      padding: 20px 10px;
+      font-weight: 400;
+      font-size: 80px;
+    }
+    p {
+      color: $light-black;
+      font-weight: 600;
+      font-family: $font-stack-side;
+      line-height: 1.8;
+      font-size: 18px;
+      margin: 30px 20px 50px 20px;
+    }
+  }
+
+  .bg-main {
+    width: 100%;
+    margin-top: 100px;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .bg-card {
+      width: calc(100% * 4 / 12);
+      border-radius: 3px;
+      box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2);
+      margin: 10px 60px;
+      position: relative;
+      background-color: #eef;
+
+      .bg-card-img {
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        img {
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          border: 4px solid $text-active;
+        }
+      }
+
+      .bg-card-content {
+        height: 100%;
+        width: 100%;
+        padding: 80px 30px 20px 30px;
+
+        h1 {
+          font-family: $font-stack-main;
+          color: $my-blue-more;
+          padding: 60px 10px 20px 10px;
+          font-weight: 400;
+          font-size: 40px;
+        }
+
+        p {
+          color: $my-blue;
+          font-weight: 400;
+          font-family: $font-stack-side;
+          line-height: 1.8;
+          font-size: 20px;
+          margin: 30px;
+        }
+
+        .bg-social {
+          display: inline-block;
+          width: 100%;
+          margin-bottom: 10px;
+          a {
+            display: inline-block;
+            margin: 0 5px;
+            transition: 0.5s;
+            text-align: center;
+            margin: 0 10px;
+            font-size: 30px;
+            i {
+              color: $my-blue-less;
+            }
+            &:hover {
+              i {
+                color: $my-blue-more;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  #groom-bride {
+    .bg-main {
+      flex-direction: column;
+      .bg-card {
+        width: 100%;
+        margin: 50px auto;
+
+        .bg-card-img {
+          img {
+            width: 180px;
+            height: 180px;
+          }
+        }
+
+        .bg-card-content {
+          h1 {
+            font-size: 30px;
+          }
+
+          p {
+            line-height: 1.6;
+            font-size: 18px;
+          }
+
+          .bg-social {
+            a {
+              font-size: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#greetings {
+  background: url("./assets/img/greeting-bg.jpg") rgba(0, 0, 0, 0.4) no-repeat
+    fixed center/cover;
+  background-blend-mode: multiply;
+
+  .grt-intro {
+    padding-top: 200px;
+    h1 {
+      font-family: $font-stack-main;
+      font-weight: 400;
+      font-size: 80px;
+      line-height: 1.8;
+      color: $text-active;
+    }
+  }
+
+  .grt-main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 200px;
+    .grt {
+      width: calc(100% * 4 / 12);
+      margin: 10px 20px 40px 20px;
+      blockquote {
+        position: relative;
+        background-color: $text-active;
+        padding: 40px;
+        border-radius: 4px;
+        font-size: 18px;
+        p {
+          font-style: italic;
+          font-family: $font-stack-side;
+          color: $light-black;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 40px;
+          border-top: 15px solid black;
+          border-top-color: #fff;
+          border-left: 15px solid transparent;
+          border-right: 15px solid transparent;
+        }
+      }
+
+      span {
+        display: block;
+        color: $text-active;
+        font-size: 20px;
+        margin-top: 30px;
+        margin-right: calc(100% * 8 / 12);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  #greetings {
+    .grt-intro {
+      padding-top: 200px;
+      h1 {
+        font-size: 30px;
+        line-height: 1.4;
+      }
+    }
+    .grt-main {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      .grt {
+        width: 100%;
+        margin: 10px 10px 40px 10px;
+        blockquote {
+          width: 100%;
+          padding: 20px;
+          font-size: 18px;
+        }
+        span {
+          display: block;
+          padding-right: calc(100% * 8 / 12);
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+#people {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .people-info {
+    width: calc(100% * 5 / 12);
+    height: 300px;
+    padding: 50px;
+    text-align: center;
+
+    h1 {
+      font-family: $font-stack-main;
+      color: $my-blue;
+      font-weight: 400;
+      font-size: 60px;
+    }
+    img {
+      max-width: 100px;
+      max-height: 100px;
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  #people {
+    flex-direction: column;
+    text-align: center;
+
+    .people-info {
+      width: 100%;
+      padding: 20px auto 30px auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  #location {
+    .location-intro {
+      h1 {
+        font-family: $font-stack-main;
+        color: $my-blue;
+        font-weight: 400;
+        font-size: 60px;
+      }
+    }
+
+    .location-main {
+      padding: 50px 20px;
+      img {
+        width: 100%;
+      }
+      .location-main-content {
+        h1 {
+          font-family: $font-stack-main;
+          color: $my-blue;
+          padding-top: 20px;
+          font-weight: 400;
+          font-size: 40px;
+        }
+
+        .time {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-family: $font-stack-side;
+          font-weight: 400;
+          font-size: 20px;
+          padding: 50px 20px;
+          margin: 10px -20px 20px -20px;
+          background-color: #e9edde;
+          position: relative;
+
+          .date {
+            color: $light-black;
+            span {
+              display: block;
+            }
+          }
+          &::before {
+            content: "♥";
+            color: $light-black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 60px;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+  }
+}
+
+#location {
+  .location-intro {
+    h1 {
+      font-family: $font-stack-main;
+      color: $my-blue;
+      font-weight: 400;
+      font-size: 80px;
+    }
+  }
+
+  .location-main {
+    padding: 30px 200px;
+    img {
+      width: 100%;
+      max-width: 1000px;
+      border-radius: 4px;
+    }
+    .location-main-content {
+      border-radius: 4px;
+      h1 {
+        font-family: $font-stack-main;
+        color: $my-blue-more;
+        background-color: #EEF;
+        padding: 20px 0;
+        margin-bottom: -50px;
+        font-weight: 400;
+        font-size: 80px;
+      }
+
+      .time {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: $font-stack-side;
+        font-weight: 400;
+        font-size: 20px;
+        margin: 20px auto;
+        background-color: #eef;
+        position: relative;
+
+        .date {
+          padding: 50px;
+          font-weight: 400;
+          margin: 20px 50px;
+          color: $my-blue;
+          font-size: 25px;
+          span {
+            display: block;
+          }
+        }
+        &::before {
+          content: "♥";
+          color: $my-blue-more;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          font-size: 100px;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}
+
+#invite {
+  background: url("./assets/img/inv-bg.jpg") rgba(0, 0, 0, 0.4) no-repeat
+    fixed center/cover;
+  background-blend-mode: multiply;
+}
