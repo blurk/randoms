@@ -6,10 +6,10 @@ $font-stack-side: "Source Sans Pro", sans-serif;
 $text-active: rgba(255, 255, 255, 1);
 $text-active-less: rgba(255, 255, 255, 0.75);
 $text-not-active: rgba(255, 255, 255, 0.5);
-$my-blue: #13afff;
 $light-black: #7f7f7f;
-$my-blue-more: #00ccff;
-$my-blue-less: #1c96ff;
+$main-color: #ff847c;
+$main-color-hover: #ffa8a0;
+$sub-color: #393e46;
 
 * {
   padding: 0;
@@ -61,7 +61,6 @@ a {
   height: 20vh;
   padding-left: 60px;
   padding-right: 60px;
-  background-color: #eef;
   &::after {
     content: "";
     clear: both;
@@ -73,7 +72,7 @@ a {
       float: left;
       margin-top: 20px;
       a {
-        color: $my-blue-less;
+        color: $main-color;
         font-weight: 500;
         font-size: 60px;
         font-family: $font-stack-main;
@@ -82,7 +81,7 @@ a {
 
       &:hover {
         a {
-          color: $my-blue-more;
+          color: $main-color;
           font-size: 62px;
         }
       }
@@ -102,7 +101,7 @@ a {
         a {
           font-weight: 400;
           font-size: 20px;
-          color: $my-blue-less;
+          color: $main-color;
           font-family: $font-stack-side;
           transition: all 0.3s ease-in-out 0s;
 
@@ -110,7 +109,7 @@ a {
             content: "";
             width: calc(100% - 30px);
             position: absolute;
-            background-color: $my-blue-more;
+            background-color: $main-color;
             height: 2px;
             bottom: 22px;
             left: 15px;
@@ -118,15 +117,6 @@ a {
             visibility: hidden;
             transform: scaleX(0);
             transition: all 0.3s ease-in-out 0s;
-          }
-        }
-        &:hover {
-          a {
-            color: $my-blue-more;
-            &::after {
-              visibility: visible;
-              transform: scaleX(1);
-            }
           }
         }
       }
@@ -137,11 +127,6 @@ a {
     display: none;
     transition: all 0.4s;
     cursor: pointer;
-  }
-
-  .navbar li a:hover,
-  #chk:hover {
-    color: $my-blue-more;
   }
 }
 
@@ -165,13 +150,8 @@ a {
         right: 35px;
         i {
           transition: all 0.3s ease-in-out 0s;
-          color: $my-blue-less;
+          color: $main-color;
           font-size: 30px;
-        }
-        &:hover {
-          i {
-            color: $my-blue-more;
-          }
         }
       }
 
@@ -254,7 +234,7 @@ a {
     }
     h1 {
       font-family: $font-stack-main;
-      color: $my-blue;
+      color: $main-color;
       font-weight: 400;
       font-size: 50px;
       line-height: 1.5;
@@ -295,7 +275,7 @@ a {
 
       .introduce-content {
         padding: 50px;
-        color: $my-blue;
+        color: $main-color;
         h1 {
           font-family: $font-stack-main;
           font-weight: 500;
@@ -308,7 +288,7 @@ a {
           font-size: 15px;
           letter-spacing: 10px;
           text-transform: uppercase;
-          border: 1px solid $my-blue;
+          border: 1px solid $main-color;
           padding: 2px 5px;
         }
       }
@@ -434,7 +414,6 @@ a {
 
       #count-down-clock {
         flex-direction: column;
-
         span {
           font-size: 60px;
           small {
@@ -456,7 +435,7 @@ a {
     }
     h1 {
       font-family: $font-stack-main;
-      color: $my-blue;
+      color: $main-color;
       padding: 20px 10px;
       font-weight: 400;
       font-size: 80px;
@@ -486,7 +465,6 @@ a {
       box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2);
       margin: 10px 60px;
       position: relative;
-      background-color: #eef;
 
       .bg-card-img {
         position: absolute;
@@ -509,14 +487,14 @@ a {
 
         h1 {
           font-family: $font-stack-main;
-          color: $my-blue-more;
+          color: $main-color;
           padding: 60px 10px 20px 10px;
           font-weight: 400;
           font-size: 40px;
         }
 
         p {
-          color: $my-blue;
+          color: $main-color;
           font-weight: 400;
           font-family: $font-stack-side;
           line-height: 1.8;
@@ -536,11 +514,11 @@ a {
             margin: 0 10px;
             font-size: 30px;
             i {
-              color: $my-blue-less;
+              color: $main-color;
             }
             &:hover {
               i {
-                color: $my-blue-more;
+                color: $main-color-hover;
               }
             }
           }
@@ -571,6 +549,8 @@ a {
           }
 
           p {
+            margin-left: 0;
+            margin-right: 0;
             line-height: 1.6;
             font-size: 18px;
           }
@@ -682,15 +662,15 @@ a {
   align-items: center;
   .people-info {
     width: calc(100% * 5 / 12);
-    height: 300px;
+    height: 200px;
     padding: 50px;
     text-align: center;
 
     h1 {
       font-family: $font-stack-main;
-      color: $my-blue;
+      color: $main-color;
       font-weight: 400;
-      font-size: 60px;
+      font-size: 75px;
     }
     img {
       max-width: 100px;
@@ -705,97 +685,48 @@ a {
     text-align: center;
 
     .people-info {
-      width: 100%;
-      padding: 20px auto 30px auto;
-    }
-  }
-}
-
-@media only screen and (max-width: 650px) {
-  #location {
-    .location-intro {
       h1 {
-        font-family: $font-stack-main;
-        color: $my-blue;
-        font-weight: 400;
-        font-size: 60px;
+        font-size: 50px;
       }
-    }
-
-    .location-main {
-      padding: 50px 20px;
-      img {
-        width: 100%;
-      }
-      .location-main-content {
-        h1 {
-          font-family: $font-stack-main;
-          color: $my-blue;
-          padding-top: 20px;
-          font-weight: 400;
-          font-size: 40px;
-        }
-
-        .time {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          font-family: $font-stack-side;
-          font-weight: 400;
-          font-size: 20px;
-          padding: 50px 20px;
-          margin: 10px -20px 20px -20px;
-          background-color: #e9edde;
-          position: relative;
-
-          .date {
-            color: $light-black;
-            span {
-              display: block;
-            }
-          }
-          &::before {
-            content: "♥";
-            color: $light-black;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            font-size: 60px;
-            transform: translate(-50%, -50%);
-          }
-        }
-      }
+      width: 100%;
+      margin: 50px auto;
     }
   }
 }
 
 #location {
+  width: 100%;
+  margin-top: 50px;
   .location-intro {
     h1 {
       font-family: $font-stack-main;
-      color: $my-blue;
+      color: $main-color;
       font-weight: 400;
       font-size: 80px;
     }
   }
 
   .location-main {
-    padding: 30px 200px;
-    img {
-      width: 100%;
-      max-width: 1000px;
-      border-radius: 4px;
-    }
+    padding: 10px 50px;
+    background: url("./assets/img/location-img.jpg") rgba(0, 0, 0, 0.4)
+      no-repeat fixed center/cover;
+    background-blend-mode: multiply;
+    width: calc(100% * 8 / 12);
+    margin: 20px auto;
+
     .location-main-content {
+      width: 100%;
       border-radius: 4px;
-      h1 {
+      color: $text-active;
+      padding: 5px 10px;
+
+      p {
         font-family: $font-stack-main;
-        color: $my-blue-more;
-        background-color: #EEF;
-        padding: 20px 0;
-        margin-bottom: -50px;
-        font-weight: 400;
-        font-size: 80px;
+        padding: 0 20px;
+        font-size: 30px;
+        line-height: 1.5;
+        font-weight: 300;
+        font-style: italic;
       }
 
       .time {
@@ -807,35 +738,62 @@ a {
         font-weight: 400;
         font-size: 20px;
         margin: 20px auto;
-        background-color: #eef;
-        position: relative;
+        text-align: center;
 
         .date {
-          padding: 50px;
+          width: calc(100% * 5/12);
+          padding: 40px 60px;
           font-weight: 400;
-          margin: 20px 50px;
-          color: $my-blue;
+          margin: 20px auto;
           font-size: 25px;
+
           span {
+            text-align: center;
             display: block;
           }
         }
-        &::before {
-          content: "♥";
-          color: $my-blue-more;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          font-size: 100px;
-          transform: translate(-50%, -50%);
+
+        .heart {
+          width: calc(100% * 2/12);
+          font-size: 60px;
         }
+      
       }
     }
   }
 }
 
-#invite {
-  background: url("./assets/img/inv-bg.jpg") rgba(0, 0, 0, 0.4) no-repeat
-    fixed center/cover;
-  background-blend-mode: multiply;
+@media only screen and (max-width: 650px) {
+  #location {
+    .location-intro {
+      h1 {
+        font-size: 60px;
+      }
+    }
+
+    .location-main {
+      padding: 10px 0;
+      width: 100%;
+
+      .location-main-content {
+        padding: 0;
+        p {
+          padding: 0;
+          font-size: 25px;
+        }
+
+        .time {
+          
+          .date {
+            padding: 0;
+            font-size: 18px;
+          }
+          
+          .heart {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+  }
 }
