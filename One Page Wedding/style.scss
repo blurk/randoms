@@ -6,10 +6,15 @@ $font-stack-side: "Source Sans Pro", sans-serif;
 $text-active: rgba(255, 255, 255, 1);
 $text-active-less: rgba(255, 255, 255, 0.75);
 $text-not-active: rgba(255, 255, 255, 0.5);
-$my-blue: #13afff;
 $light-black: #7f7f7f;
-$my-blue-more: #00ccff;
-$my-blue-less: #1c96ff;
+$main-color: #ff847c;
+$main-color-hover: #ffa8a0;
+$sub-color: #393e46;
+$transition-standard: all 0.3s ease-in-out 0s;
+@mixin background($img) {
+  background: url($img) rgba(0, 0, 0, 0.4) no-repeat fixed center/cover;
+  background-blend-mode: multiply;
+}
 
 * {
   padding: 0;
@@ -35,7 +40,9 @@ $my-blue-less: #1c96ff;
 }
 
 html {
+  overflow-y: scroll;
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
   &::-webkit-scrollbar {
     width: 0;
   }
@@ -61,7 +68,6 @@ a {
   height: 20vh;
   padding-left: 60px;
   padding-right: 60px;
-  background-color: #eef;
   &::after {
     content: "";
     clear: both;
@@ -73,16 +79,15 @@ a {
       float: left;
       margin-top: 20px;
       a {
-        color: $my-blue-less;
-        font-weight: 500;
+        color: $main-color;
+        font-weight: bold;
         font-size: 60px;
         font-family: $font-stack-main;
-        transition: all 0.3s ease-in-out 0s;
+        transition: $transition-standard;
       }
 
       &:hover {
         a {
-          color: $my-blue-more;
           font-size: 62px;
         }
       }
@@ -100,29 +105,27 @@ a {
         position: relative;
 
         a {
-          font-weight: 400;
+          font-weight: bold;
           font-size: 20px;
-          color: $my-blue-less;
+          color: $main-color;
           font-family: $font-stack-side;
-          transition: all 0.3s ease-in-out 0s;
+          transition: $transition-standard;
 
           &::after {
             content: "";
             width: calc(100% - 30px);
             position: absolute;
-            background-color: $my-blue-more;
+            background-color: $main-color;
             height: 2px;
             bottom: 22px;
             left: 15px;
             right: 15px;
             visibility: hidden;
             transform: scaleX(0);
-            transition: all 0.3s ease-in-out 0s;
+            transition: $transition-standard;
           }
-        }
-        &:hover {
-          a {
-            color: $my-blue-more;
+
+          &:hover {
             &::after {
               visibility: visible;
               transform: scaleX(1);
@@ -135,13 +138,8 @@ a {
 
   #chk {
     display: none;
-    transition: all 0.4s;
+    transition: $transition-standard;
     cursor: pointer;
-  }
-
-  .navbar li a:hover,
-  #chk:hover {
-    color: $my-blue-more;
   }
 }
 
@@ -164,14 +162,9 @@ a {
         top: 30px;
         right: 35px;
         i {
-          transition: all 0.3s ease-in-out 0s;
-          color: $my-blue-less;
+          transition: $transition-standard;
+          color: $main-color;
           font-size: 30px;
-        }
-        &:hover {
-          i {
-            color: $my-blue-more;
-          }
         }
       }
 
@@ -187,7 +180,7 @@ a {
         display: flex;
         text-align: center;
         line-height: normal;
-        transition: all 0.6s ease;
+        transition: $transition-standard;
         display: block;
 
         li {
@@ -199,9 +192,7 @@ a {
 }
 
 #preview {
-  background: url("./assets/img/header-bg.jpg") rgba(0, 0, 0, 0.4) no-repeat
-    fixed center/cover;
-  background-blend-mode: multiply;
+  @include background("./assets/img/header-bg.jpg");
   position: relative;
   height: 100vh;
 
@@ -254,7 +245,7 @@ a {
     }
     h1 {
       font-family: $font-stack-main;
-      color: $my-blue;
+      color: $main-color;
       font-weight: 400;
       font-size: 50px;
       line-height: 1.5;
@@ -295,7 +286,7 @@ a {
 
       .introduce-content {
         padding: 50px;
-        color: $my-blue;
+        color: $main-color;
         h1 {
           font-family: $font-stack-main;
           font-weight: 500;
@@ -308,7 +299,7 @@ a {
           font-size: 15px;
           letter-spacing: 10px;
           text-transform: uppercase;
-          border: 1px solid $my-blue;
+          border: 1px solid $main-color;
           padding: 2px 5px;
         }
       }
@@ -366,10 +357,7 @@ a {
 }
 
 #count-down {
-  background: url("./assets/img/count-down-bg.jpg") rgba(0, 0, 0, 0.4) no-repeat
-    fixed center/cover;
-  background-blend-mode: multiply;
-
+  @include background("./assets/img/count-down-bg.jpg");
   .container {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -434,7 +422,6 @@ a {
 
       #count-down-clock {
         flex-direction: column;
-
         span {
           font-size: 60px;
           small {
@@ -456,7 +443,7 @@ a {
     }
     h1 {
       font-family: $font-stack-main;
-      color: $my-blue;
+      color: $main-color;
       padding: 20px 10px;
       font-weight: 400;
       font-size: 80px;
@@ -486,7 +473,6 @@ a {
       box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2);
       margin: 10px 60px;
       position: relative;
-      background-color: #eef;
 
       .bg-card-img {
         position: absolute;
@@ -509,14 +495,14 @@ a {
 
         h1 {
           font-family: $font-stack-main;
-          color: $my-blue-more;
+          color: $main-color;
           padding: 60px 10px 20px 10px;
           font-weight: 400;
           font-size: 40px;
         }
 
         p {
-          color: $my-blue;
+          color: $main-color;
           font-weight: 400;
           font-family: $font-stack-side;
           line-height: 1.8;
@@ -531,16 +517,16 @@ a {
           a {
             display: inline-block;
             margin: 0 5px;
-            transition: 0.5s;
+            transition: $transition-standard;
             text-align: center;
             margin: 0 10px;
             font-size: 30px;
             i {
-              color: $my-blue-less;
+              color: $main-color;
             }
             &:hover {
               i {
-                color: $my-blue-more;
+                color: $main-color-hover;
               }
             }
           }
@@ -571,6 +557,8 @@ a {
           }
 
           p {
+            margin-left: 0;
+            margin-right: 0;
             line-height: 1.6;
             font-size: 18px;
           }
@@ -587,10 +575,7 @@ a {
 }
 
 #greetings {
-  background: url("./assets/img/greeting-bg.jpg") rgba(0, 0, 0, 0.4) no-repeat
-    fixed center/cover;
-  background-blend-mode: multiply;
-
+  @include background("./assets/img/greeting-bg.jpg");
   .grt-intro {
     padding-top: 200px;
     h1 {
@@ -682,15 +667,15 @@ a {
   align-items: center;
   .people-info {
     width: calc(100% * 5 / 12);
-    height: 300px;
+    height: 200px;
     padding: 50px;
     text-align: center;
 
     h1 {
       font-family: $font-stack-main;
-      color: $my-blue;
+      color: $main-color;
       font-weight: 400;
-      font-size: 60px;
+      font-size: 75px;
     }
     img {
       max-width: 100px;
@@ -705,97 +690,46 @@ a {
     text-align: center;
 
     .people-info {
-      width: 100%;
-      padding: 20px auto 30px auto;
-    }
-  }
-}
-
-@media only screen and (max-width: 650px) {
-  #location {
-    .location-intro {
       h1 {
-        font-family: $font-stack-main;
-        color: $my-blue;
-        font-weight: 400;
-        font-size: 60px;
+        font-size: 50px;
       }
-    }
-
-    .location-main {
-      padding: 50px 20px;
-      img {
-        width: 100%;
-      }
-      .location-main-content {
-        h1 {
-          font-family: $font-stack-main;
-          color: $my-blue;
-          padding-top: 20px;
-          font-weight: 400;
-          font-size: 40px;
-        }
-
-        .time {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          font-family: $font-stack-side;
-          font-weight: 400;
-          font-size: 20px;
-          padding: 50px 20px;
-          margin: 10px -20px 20px -20px;
-          background-color: #e9edde;
-          position: relative;
-
-          .date {
-            color: $light-black;
-            span {
-              display: block;
-            }
-          }
-          &::before {
-            content: "♥";
-            color: $light-black;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            font-size: 60px;
-            transform: translate(-50%, -50%);
-          }
-        }
-      }
+      width: 100%;
+      margin: 50px auto;
     }
   }
 }
 
 #location {
+  width: 100%;
+  margin-top: 50px;
   .location-intro {
     h1 {
       font-family: $font-stack-main;
-      color: $my-blue;
+      color: $main-color;
       font-weight: 400;
       font-size: 80px;
     }
   }
 
   .location-main {
-    padding: 30px 200px;
-    img {
-      width: 100%;
-      max-width: 1000px;
-      border-radius: 4px;
-    }
+    padding: 10px 50px;
+    @include background("./assets/img/location-img.jpg");
+    width: calc(100% * 8 / 12);
+    margin: 20px auto;
+
     .location-main-content {
+      width: 100%;
       border-radius: 4px;
-      h1 {
+      color: $text-active;
+      padding: 5px 10px;
+
+      p {
         font-family: $font-stack-main;
-        color: $my-blue-more;
-        background-color: #EEF;
-        padding: 20px 0;
-        margin-bottom: -50px;
-        font-weight: 400;
-        font-size: 80px;
+        padding: 0 20px;
+        font-size: 30px;
+        line-height: 1.5;
+        font-weight: 300;
+        font-style: italic;
       }
 
       .time {
@@ -807,35 +741,281 @@ a {
         font-weight: 400;
         font-size: 20px;
         margin: 20px auto;
-        background-color: #eef;
-        position: relative;
+        text-align: center;
 
         .date {
-          padding: 50px;
+          width: calc(100% * 5 / 12);
+          padding: 40px 60px;
           font-weight: 400;
-          margin: 20px 50px;
-          color: $my-blue;
+          margin: 20px auto;
           font-size: 25px;
+
           span {
+            text-align: center;
             display: block;
           }
         }
-        &::before {
-          content: "♥";
-          color: $my-blue-more;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          font-size: 100px;
-          transform: translate(-50%, -50%);
+
+        .heart {
+          width: calc(100% * 2 / 12);
+          font-size: 60px;
         }
       }
     }
   }
 }
 
+@media only screen and (max-width: 650px) {
+  #location {
+    .location-intro {
+      h1 {
+        font-size: 60px;
+      }
+    }
+
+    .location-main {
+      padding: 10px 0;
+      width: 100%;
+
+      .location-main-content {
+        padding: 0;
+        p {
+          padding: 0;
+          font-size: 25px;
+        }
+
+        .time {
+          .date {
+            padding: 0;
+            font-size: 18px;
+          }
+
+          .heart {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// MODAL
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  position: relative;
+  margin: auto;
+  padding: 0;
+  width: 50%;
+  animation: animatetop 0.4s;
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.close {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  color: white;
+  float: right;
+  font-size: 60px;
+  font-weight: bold;
+  transition: $transition-standard;
+}
+
+.close:hover,
+.close:focus {
+  color: $text-active-less;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 10px;
+  background-color: $main-color;
+  color: $text-active;
+  font-family: $font-stack-main;
+  text-align: center;
+  h2 {
+    font-size: 60px;
+  }
+}
+
+.modal-body {
+  form {
+    height: 300px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    @include background("./assets/img/inv-bg.jpg");
+    background-attachment: "initial";
+    font-family: $font-stack-side;
+
+    .form__input {
+      background: rgba(255, 255, 255, 0.1);
+      color: $text-active;
+      font-size: 16px;
+      padding: 20px 10px;
+      border: none;
+      width: 80%;
+
+      &::placeholder {
+        color: $text-active;
+      }
+
+      &:focus {
+        outline-width: 0;
+        border: 2px solid $main-color;
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    button {
+      background-color: $main-color;
+      color: $text-active;
+      border: none;
+      padding: 20px 40px;
+      outline-width: 0;
+    }
+  }
+}
+
 #invite {
-  background: url("./assets/img/inv-bg.jpg") rgba(0, 0, 0, 0.4) no-repeat
-    fixed center/cover;
-  background-blend-mode: multiply;
+  background-color: $main-color;
+  color: $text-active;
+  font-family: $font-stack-side;
+  border: none;
+  padding: 20px 40px;
+  font-size: 30px;
+  display: block;
+  margin: 10px auto;
+  outline-width: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@media only screen and (max-width: 650px) {
+  .close {
+    top: -5px;
+    font-size: 40px;
+  }
+
+  .modal-header {
+    h2 {
+      margin: 30px 10px 10px;
+      font-size: 30px;
+    }
+  }
+}
+
+footer {
+  font-family: $font-stack-side;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  p {
+    color: $light-black;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    span,
+    a {
+      color: $main-color;
+    }
+  }
+  .social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+    a {
+      display: inline-block;
+      margin: 0 5px;
+      transition: $transition-standard;
+      text-align: center;
+      margin: 0 10px;
+      i {
+        color: $main-color;
+      }
+      &:hover {
+        i {
+          color: $main-color-hover;
+        }
+      }
+    }
+  }
+}
+
+#btnToTop {
+  visibility: hidden;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: $main-color;
+  color: $text-not-active;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+  transition: $transition-standard;
+}
+
+#btnToTop:hover {
+  color: $text-active;
+  background-color: $main-color-hover;
+}
+.slide-in {
+  opacity: 0;
+  transition: $transition-standard;
+  transform: translateY(60%) scale(0.95);
+  transition-duration: 1s;
+}
+
+.active {
+  opacity: 1;
+  transform: translateY(0%) scale(1);
+}
+
+.fade-in {
+  animation: fadeIn ease-in-out 1s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
