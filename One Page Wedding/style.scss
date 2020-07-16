@@ -10,6 +10,11 @@ $light-black: #7f7f7f;
 $main-color: #ff847c;
 $main-color-hover: #ffa8a0;
 $sub-color: #393e46;
+$transition-standard: all 0.3s ease-in-out 0s;
+@mixin background($img) {
+  background: url($img) rgba(0, 0, 0, 0.4) no-repeat fixed center/cover;
+  background-blend-mode: multiply;
+}
 
 * {
   padding: 0;
@@ -35,7 +40,9 @@ $sub-color: #393e46;
 }
 
 html {
+  overflow-y: scroll;
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
   &::-webkit-scrollbar {
     width: 0;
   }
@@ -73,15 +80,14 @@ a {
       margin-top: 20px;
       a {
         color: $main-color;
-        font-weight: 500;
+        font-weight: bold;
         font-size: 60px;
         font-family: $font-stack-main;
-        transition: all 0.3s ease-in-out 0s;
+        transition: $transition-standard;
       }
 
       &:hover {
         a {
-          color: $main-color;
           font-size: 62px;
         }
       }
@@ -99,11 +105,11 @@ a {
         position: relative;
 
         a {
-          font-weight: 400;
+          font-weight: bold;
           font-size: 20px;
           color: $main-color;
           font-family: $font-stack-side;
-          transition: all 0.3s ease-in-out 0s;
+          transition: $transition-standard;
 
           &::after {
             content: "";
@@ -116,7 +122,14 @@ a {
             right: 15px;
             visibility: hidden;
             transform: scaleX(0);
-            transition: all 0.3s ease-in-out 0s;
+            transition: $transition-standard;
+          }
+
+          &:hover {
+            &::after {
+              visibility: visible;
+              transform: scaleX(1);
+            }
           }
         }
       }
@@ -125,7 +138,7 @@ a {
 
   #chk {
     display: none;
-    transition: all 0.4s;
+    transition: $transition-standard;
     cursor: pointer;
   }
 }
@@ -149,7 +162,7 @@ a {
         top: 30px;
         right: 35px;
         i {
-          transition: all 0.3s ease-in-out 0s;
+          transition: $transition-standard;
           color: $main-color;
           font-size: 30px;
         }
@@ -167,7 +180,7 @@ a {
         display: flex;
         text-align: center;
         line-height: normal;
-        transition: all 0.6s ease;
+        transition: $transition-standard;
         display: block;
 
         li {
@@ -179,9 +192,7 @@ a {
 }
 
 #preview {
-  background: url("./assets/img/header-bg.jpg") rgba(0, 0, 0, 0.4) no-repeat
-    fixed center/cover;
-  background-blend-mode: multiply;
+  @include background("./assets/img/header-bg.jpg");
   position: relative;
   height: 100vh;
 
@@ -346,10 +357,7 @@ a {
 }
 
 #count-down {
-  background: url("./assets/img/count-down-bg.jpg") rgba(0, 0, 0, 0.4) no-repeat
-    fixed center/cover;
-  background-blend-mode: multiply;
-
+  @include background("./assets/img/count-down-bg.jpg");
   .container {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -509,7 +517,7 @@ a {
           a {
             display: inline-block;
             margin: 0 5px;
-            transition: 0.5s;
+            transition: $transition-standard;
             text-align: center;
             margin: 0 10px;
             font-size: 30px;
@@ -567,10 +575,7 @@ a {
 }
 
 #greetings {
-  background: url("./assets/img/greeting-bg.jpg") rgba(0, 0, 0, 0.4) no-repeat
-    fixed center/cover;
-  background-blend-mode: multiply;
-
+  @include background("./assets/img/greeting-bg.jpg");
   .grt-intro {
     padding-top: 200px;
     h1 {
@@ -708,9 +713,7 @@ a {
 
   .location-main {
     padding: 10px 50px;
-    background: url("./assets/img/location-img.jpg") rgba(0, 0, 0, 0.4)
-      no-repeat fixed center/cover;
-    background-blend-mode: multiply;
+    @include background("./assets/img/location-img.jpg");
     width: calc(100% * 8 / 12);
     margin: 20px auto;
 
@@ -741,7 +744,7 @@ a {
         text-align: center;
 
         .date {
-          width: calc(100% * 5/12);
+          width: calc(100% * 5 / 12);
           padding: 40px 60px;
           font-weight: 400;
           margin: 20px auto;
@@ -754,10 +757,9 @@ a {
         }
 
         .heart {
-          width: calc(100% * 2/12);
+          width: calc(100% * 2 / 12);
           font-size: 60px;
         }
-      
       }
     }
   }
@@ -783,17 +785,237 @@ a {
         }
 
         .time {
-          
           .date {
             padding: 0;
             font-size: 18px;
           }
-          
+
           .heart {
             font-size: 30px;
           }
         }
       }
     }
+  }
+}
+
+// MODAL
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  position: relative;
+  margin: auto;
+  padding: 0;
+  width: 50%;
+  animation: animatetop 0.4s;
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.close {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  color: white;
+  float: right;
+  font-size: 60px;
+  font-weight: bold;
+  transition: $transition-standard;
+}
+
+.close:hover,
+.close:focus {
+  color: $text-active-less;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 10px;
+  background-color: $main-color;
+  color: $text-active;
+  font-family: $font-stack-main;
+  text-align: center;
+  h2 {
+    font-size: 60px;
+  }
+}
+
+.modal-body {
+  form {
+    height: 300px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    @include background("./assets/img/inv-bg.jpg");
+    background-attachment: "initial";
+    font-family: $font-stack-side;
+
+    .form__input {
+      background: rgba(255, 255, 255, 0.1);
+      color: $text-active;
+      font-size: 16px;
+      padding: 20px 10px;
+      border: none;
+      width: 80%;
+
+      &::placeholder {
+        color: $text-active;
+      }
+
+      &:focus {
+        outline-width: 0;
+        border: 2px solid $main-color;
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    button {
+      background-color: $main-color;
+      color: $text-active;
+      border: none;
+      padding: 20px 40px;
+      outline-width: 0;
+    }
+  }
+}
+
+#invite {
+  background-color: $main-color;
+  color: $text-active;
+  font-family: $font-stack-side;
+  border: none;
+  padding: 20px 40px;
+  font-size: 30px;
+  display: block;
+  margin: 10px auto;
+  outline-width: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@media only screen and (max-width: 650px) {
+  .close {
+    top: -5px;
+    font-size: 40px;
+  }
+
+  .modal-header {
+    h2 {
+      margin: 30px 10px 10px;
+      font-size: 30px;
+    }
+  }
+}
+
+footer {
+  font-family: $font-stack-side;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  p {
+    color: $light-black;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    span,
+    a {
+      color: $main-color;
+    }
+  }
+  .social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+    a {
+      display: inline-block;
+      margin: 0 5px;
+      transition: $transition-standard;
+      text-align: center;
+      margin: 0 10px;
+      i {
+        color: $main-color;
+      }
+      &:hover {
+        i {
+          color: $main-color-hover;
+        }
+      }
+    }
+  }
+}
+
+#btnToTop {
+  visibility: hidden;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: $main-color;
+  color: $text-not-active;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+  transition: $transition-standard;
+}
+
+#btnToTop:hover {
+  color: $text-active;
+  background-color: $main-color-hover;
+}
+.slide-in {
+  opacity: 0;
+  transition: $transition-standard;
+  transform: translateY(60%) scale(0.95);
+  transition-duration: 1s;
+}
+
+.active {
+  opacity: 1;
+  transform: translateY(0%) scale(1);
+}
+
+.fade-in {
+  animation: fadeIn ease-in-out 1s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
