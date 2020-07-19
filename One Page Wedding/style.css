@@ -17,6 +17,7 @@
   max-width: 220px;
   max-height: 220px;
 }
+
 .hero-img img {
   width: 100%;
   height: auto;
@@ -27,6 +28,7 @@ html {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
 }
+
 html::-webkit-scrollbar {
   width: 0;
 }
@@ -52,15 +54,18 @@ a {
   padding-left: 60px;
   padding-right: 60px;
 }
+
 #header::after {
   content: "";
   clear: both;
   display: table;
 }
+
 #header nav .logo {
   float: left;
   margin-top: 20px;
 }
+
 #header nav .logo a {
   color: #ff847c;
   font-weight: bold;
@@ -68,20 +73,24 @@ a {
   font-family: "Clicker Script", cursive;
   transition: all 0.3s ease-in-out 0s;
 }
+
 #header nav .logo:hover a {
   font-size: 62px;
 }
+
 #header nav .menu {
   float: right;
   padding-left: 15px;
   padding-right: 50px;
   margin-top: 25px;
 }
+
 #header nav .menu li {
   display: inline-block;
   padding: 25px 15px;
   position: relative;
 }
+
 #header nav .menu li a {
   font-weight: bold;
   font-size: 20px;
@@ -89,6 +98,7 @@ a {
   font-family: "Source Sans Pro", sans-serif;
   transition: all 0.3s ease-in-out 0s;
 }
+
 #header nav .menu li a::after {
   content: "";
   width: calc(100% - 30px);
@@ -102,10 +112,12 @@ a {
   transform: scaleX(0);
   transition: all 0.3s ease-in-out 0s;
 }
+
 #header nav .menu li a:hover::after {
   visibility: visible;
   transform: scaleX(1);
 }
+
 #header #chk {
   display: none;
   transition: all 0.3s ease-in-out 0s;
@@ -116,13 +128,16 @@ a {
   #header {
     height: 80px;
   }
+
   #header .container .logo {
     margin-top: 15px;
     margin-left: -60px;
   }
+
   #header .container .logo a {
     font-size: 40px;
   }
+
   #header .container #chk {
     display: block;
     position: absolute;
@@ -130,11 +145,13 @@ a {
     top: 30px;
     right: 35px;
   }
+
   #header .container #chk i {
     transition: all 0.3s ease-in-out 0s;
     color: #ff847c;
     font-size: 30px;
   }
+
   #header .container .menu {
     z-index: 10;
     padding: 80px 0;
@@ -150,6 +167,7 @@ a {
     transition: all 0.3s ease-in-out 0s;
     display: block;
   }
+
   #header .container .menu li {
     display: block;
   }
@@ -160,20 +178,24 @@ a {
   position: relative;
   height: 100vh;
 }
+
 #preview .hero {
   width: 100%;
   padding-top: 50px;
 }
+
 #preview .hero #hero-img {
   margin-left: auto;
   margin-right: auto;
 }
+
 #preview .hero h1 {
   font-weight: 600;
   font-size: 80px;
   color: #fff;
   font-family: "Clicker Script", cursive;
 }
+
 #preview .hero h2,
 #preview .hero h3 {
   font-weight: 600;
@@ -187,6 +209,7 @@ a {
   #preview .hero h1 {
     font-size: 60px;
   }
+
   #preview .hero h2,
 #preview .hero h3 {
     font-size: 20px;
@@ -195,6 +218,7 @@ a {
 #introduce .introduce-head .hero-img {
   margin: 50px auto;
 }
+
 #introduce .introduce-head h1 {
   font-family: "Clicker Script", cursive;
   color: #ff847c;
@@ -205,6 +229,7 @@ a {
   padding-bottom: 20px;
   margin-bottom: 30px;
 }
+
 #introduce .introduce-head p {
   color: #7f7f7f;
   font-weight: 400;
@@ -213,6 +238,7 @@ a {
   font-size: 18px;
   margin: 30px;
 }
+
 #introduce .introduce-body {
   display: flex;
   flex-direction: row;
@@ -221,21 +247,25 @@ a {
   margin-top: 50px;
   width: calc(100% * 8 / 12);
 }
+
 #introduce .introduce-body .flex-column {
   width: calc(100% * 5 / 12);
   border-radius: 10px;
   margin: 30px auto;
   padding: 30px 50px;
 }
+
 #introduce .introduce-body .flex-column img {
   height: 220px;
   width: 220px;
   border-radius: 50%;
 }
+
 #introduce .introduce-body .flex-column .introduce-content {
   padding: 50px;
   color: #ff847c;
 }
+
 #introduce .introduce-body .flex-column .introduce-content h1 {
   font-family: "Clicker Script", cursive;
   font-weight: 500;
@@ -243,6 +273,7 @@ a {
   white-space: nowrap;
   margin: 20px auto 10px auto;
 }
+
 #introduce .introduce-body .flex-column .introduce-content span {
   font-size: 15px;
   letter-spacing: 10px;
@@ -250,12 +281,14 @@ a {
   border: 1px solid #ff847c;
   padding: 2px 5px;
 }
+
 #introduce .introduce-body h2 {
   width: calc(100% * 2 / 12);
   text-align: center;
   padding-left: 30px;
   padding-right: 30px;
 }
+
 #introduce .introduce-body h2 img {
   width: 95px;
   height: 95px;
@@ -270,6 +303,7 @@ a {
     align-items: center;
     margin-top: 50px;
   }
+
   #introduce .introduce-body .flex-column {
     width: 100%;
     margin-left: auto;
@@ -277,18 +311,22 @@ a {
     text-align: center;
     padding: 15px 30px;
   }
+
   #introduce .introduce-body .flex-column img {
     max-width: 100%;
     max-height: 180px;
   }
+
   #introduce .introduce-body .flex-column .introduce-content {
     margin: 5px auto;
     padding: 5px;
     text-align: center;
   }
+
   #introduce .introduce-body h2 {
     width: 100%;
   }
+
   #introduce .introduce-body h2 img {
     width: 80%;
   }
@@ -297,11 +335,13 @@ a {
   background: url("./assets/img/count-down-bg.jpg") rgba(0, 0, 0, 0.4) no-repeat fixed center/cover;
   background-blend-mode: multiply;
 }
+
 #count-down .container {
   padding-top: 50px;
   padding-bottom: 50px;
   text-align: center;
 }
+
 #count-down .container .count-down-text h1 {
   font-family: "Clicker Script", cursive;
   color: white;
@@ -310,12 +350,14 @@ a {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
 #count-down .container .count-down-text h3 {
   font-family: "Source Sans Pro", sans-serif;
   color: rgba(255, 255, 255, 0.75);
   font-size: 30px;
   padding-bottom: 20px;
 }
+
 #count-down .container #count-down-clock {
   width: calc(100% * 8 / 12);
   font-family: "Clicker Script", cursive;
@@ -326,10 +368,12 @@ a {
   justify-content: center;
   align-items: center;
 }
+
 #count-down .container #count-down-clock span {
   display: inline-block;
   margin: 0 30px;
 }
+
 #count-down .container #count-down-clock span small {
   display: block;
   font-family: "Source Sans Pro", sans-serif;
@@ -342,18 +386,23 @@ a {
   #count-down {
     width: 100%;
   }
+
   #count-down .container .count-down-text h1 {
     font-size: 60px;
   }
+
   #count-down .container .count-down-text h3 {
     font-size: 20px;
   }
+
   #count-down .container #count-down-clock {
     flex-direction: column;
   }
+
   #count-down .container #count-down-clock span {
     font-size: 60px;
   }
+
   #count-down .container #count-down-clock span small {
     font-size: 15px;
   }
@@ -361,11 +410,13 @@ a {
 #groom-bride .gb-intro {
   margin-top: 50px;
 }
+
 #groom-bride .gb-intro img {
   margin-top: 100px;
   width: 200px;
   height: 200px;
 }
+
 #groom-bride .gb-intro h1 {
   font-family: "Clicker Script", cursive;
   color: #ff847c;
@@ -373,6 +424,7 @@ a {
   font-weight: 400;
   font-size: 80px;
 }
+
 #groom-bride .gb-intro p {
   color: #7f7f7f;
   font-weight: 600;
@@ -381,6 +433,7 @@ a {
   font-size: 18px;
   margin: 30px 20px 50px 20px;
 }
+
 #groom-bride .bg-main {
   width: 100%;
   margin-top: 100px;
@@ -390,6 +443,7 @@ a {
   justify-content: center;
   align-items: center;
 }
+
 #groom-bride .bg-main .bg-card {
   width: calc(100% * 4 / 12);
   border-radius: 3px;
@@ -397,6 +451,7 @@ a {
   margin: 10px 60px;
   position: relative;
 }
+
 #groom-bride .bg-main .bg-card .bg-card-img {
   position: absolute;
   top: 30px;
@@ -404,17 +459,20 @@ a {
   transform: translate(-50%, -50%);
   display: block;
 }
+
 #groom-bride .bg-main .bg-card .bg-card-img img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
   border: 4px solid white;
 }
+
 #groom-bride .bg-main .bg-card .bg-card-content {
   height: 100%;
   width: 100%;
   padding: 80px 30px 20px 30px;
 }
+
 #groom-bride .bg-main .bg-card .bg-card-content h1 {
   font-family: "Clicker Script", cursive;
   color: #ff847c;
@@ -422,6 +480,7 @@ a {
   font-weight: 400;
   font-size: 40px;
 }
+
 #groom-bride .bg-main .bg-card .bg-card-content p {
   color: #ff847c;
   font-weight: 400;
@@ -430,11 +489,13 @@ a {
   font-size: 20px;
   margin: 30px;
 }
+
 #groom-bride .bg-main .bg-card .bg-card-content .bg-social {
   display: inline-block;
   width: 100%;
   margin-bottom: 10px;
 }
+
 #groom-bride .bg-main .bg-card .bg-card-content .bg-social a {
   display: inline-block;
   margin: 0 5px;
@@ -443,9 +504,11 @@ a {
   margin: 0 10px;
   font-size: 30px;
 }
+
 #groom-bride .bg-main .bg-card .bg-card-content .bg-social a i {
   color: #ff847c;
 }
+
 #groom-bride .bg-main .bg-card .bg-card-content .bg-social a:hover i {
   color: #ffa8a0;
 }
@@ -454,23 +517,28 @@ a {
   #groom-bride .bg-main {
     flex-direction: column;
   }
+
   #groom-bride .bg-main .bg-card {
     width: 100%;
     margin: 50px auto;
   }
+
   #groom-bride .bg-main .bg-card .bg-card-img img {
     width: 180px;
     height: 180px;
   }
+
   #groom-bride .bg-main .bg-card .bg-card-content h1 {
     font-size: 30px;
   }
+
   #groom-bride .bg-main .bg-card .bg-card-content p {
     margin-left: 0;
     margin-right: 0;
     line-height: 1.6;
     font-size: 18px;
   }
+
   #groom-bride .bg-main .bg-card .bg-card-content .bg-social a {
     font-size: 25px;
   }
@@ -479,9 +547,11 @@ a {
   background: url("./assets/img/greeting-bg.jpg") rgba(0, 0, 0, 0.4) no-repeat fixed center/cover;
   background-blend-mode: multiply;
 }
+
 #greetings .grt-intro {
   padding-top: 200px;
 }
+
 #greetings .grt-intro h1 {
   font-family: "Clicker Script", cursive;
   font-weight: 400;
@@ -489,16 +559,19 @@ a {
   line-height: 1.8;
   color: white;
 }
+
 #greetings .grt-main {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   padding-bottom: 200px;
 }
+
 #greetings .grt-main .grt {
   width: calc(100% * 4 / 12);
   margin: 10px 20px 40px 20px;
 }
+
 #greetings .grt-main .grt blockquote {
   position: relative;
   background-color: white;
@@ -506,11 +579,13 @@ a {
   border-radius: 4px;
   font-size: 18px;
 }
+
 #greetings .grt-main .grt blockquote p {
   font-style: italic;
   font-family: "Source Sans Pro", sans-serif;
   color: #7f7f7f;
 }
+
 #greetings .grt-main .grt blockquote::after {
   content: "";
   position: absolute;
@@ -521,6 +596,7 @@ a {
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
 }
+
 #greetings .grt-main .grt span {
   display: block;
   color: white;
@@ -533,25 +609,30 @@ a {
   #greetings .grt-intro {
     padding-top: 200px;
   }
+
   #greetings .grt-intro h1 {
     font-size: 30px;
     line-height: 1.4;
   }
+
   #greetings .grt-main {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
   }
+
   #greetings .grt-main .grt {
     width: 100%;
     margin: 10px 10px 40px 10px;
   }
+
   #greetings .grt-main .grt blockquote {
     width: 100%;
     padding: 20px;
     font-size: 18px;
   }
+
   #greetings .grt-main .grt span {
     display: block;
     padding-right: calc(100% * 8 / 12);
@@ -563,18 +644,21 @@ a {
   justify-content: space-around;
   align-items: center;
 }
+
 #people .people-info {
   width: calc(100% * 5 / 12);
   height: 200px;
   padding: 50px;
   text-align: center;
 }
+
 #people .people-info h1 {
   font-family: "Clicker Script", cursive;
   color: #ff847c;
   font-weight: 400;
   font-size: 75px;
 }
+
 #people .people-info img {
   max-width: 100px;
   max-height: 100px;
@@ -585,10 +669,12 @@ a {
     flex-direction: column;
     text-align: center;
   }
+
   #people .people-info {
     width: 100%;
     margin: 50px auto;
   }
+
   #people .people-info h1 {
     font-size: 50px;
   }
@@ -597,12 +683,14 @@ a {
   width: 100%;
   margin-top: 50px;
 }
+
 #location .location-intro h1 {
   font-family: "Clicker Script", cursive;
   color: #ff847c;
   font-weight: 400;
   font-size: 80px;
 }
+
 #location .location-main {
   padding: 10px 50px;
   background: url("./assets/img/location-img.jpg") rgba(0, 0, 0, 0.4) no-repeat fixed center/cover;
@@ -610,12 +698,14 @@ a {
   width: calc(100% * 8 / 12);
   margin: 20px auto;
 }
+
 #location .location-main .location-main-content {
   width: 100%;
   border-radius: 4px;
   color: white;
   padding: 5px 10px;
 }
+
 #location .location-main .location-main-content p {
   font-family: "Clicker Script", cursive;
   padding: 0 20px;
@@ -624,6 +714,7 @@ a {
   font-weight: 300;
   font-style: italic;
 }
+
 #location .location-main .location-main-content .time {
   width: 100%;
   display: flex;
@@ -635,6 +726,7 @@ a {
   margin: 20px auto;
   text-align: center;
 }
+
 #location .location-main .location-main-content .time .date {
   width: calc(100% * 5 / 12);
   padding: 40px 60px;
@@ -642,10 +734,12 @@ a {
   margin: 20px auto;
   font-size: 25px;
 }
+
 #location .location-main .location-main-content .time .date span {
   text-align: center;
   display: block;
 }
+
 #location .location-main .location-main-content .time .heart {
   width: calc(100% * 2 / 12);
   font-size: 60px;
@@ -655,21 +749,26 @@ a {
   #location .location-intro h1 {
     font-size: 60px;
   }
+
   #location .location-main {
     padding: 10px 0;
     width: 100%;
   }
+
   #location .location-main .location-main-content {
     padding: 0;
   }
+
   #location .location-main .location-main-content p {
     padding: 0;
     font-size: 25px;
   }
+
   #location .location-main .location-main-content .time .date {
     padding: 0;
     font-size: 18px;
   }
+
   #location .location-main .location-main-content .time .heart {
     font-size: 30px;
   }
@@ -730,6 +829,7 @@ a {
   font-family: "Clicker Script", cursive;
   text-align: center;
 }
+
 .modal-header h2 {
   font-size: 60px;
 }
@@ -746,6 +846,7 @@ a {
   background-attachment: "initial";
   font-family: "Source Sans Pro", sans-serif;
 }
+
 .modal-body form .form__input {
   background: rgba(255, 255, 255, 0.1);
   color: white;
@@ -754,14 +855,17 @@ a {
   border: none;
   width: 80%;
 }
+
 .modal-body form .form__input::placeholder {
   color: white;
 }
+
 .modal-body form .form__input:focus {
   outline-width: 0;
   border: 2px solid #ff847c;
   background: rgba(255, 255, 255, 0.2);
 }
+
 .modal-body form button {
   background-color: #ff847c;
   color: white;
@@ -803,16 +907,19 @@ footer {
   align-items: center;
   flex-direction: column;
 }
+
 footer p {
   color: #7f7f7f;
   padding-left: 15px;
   padding-right: 15px;
   text-align: center;
 }
+
 footer p span,
 footer p a {
   color: #ff847c;
 }
+
 footer .social {
   display: flex;
   justify-content: center;
@@ -821,6 +928,7 @@ footer .social {
   margin-top: 30px;
   margin-bottom: 10px;
 }
+
 footer .social a {
   display: inline-block;
   margin: 0 5px;
@@ -828,9 +936,11 @@ footer .social a {
   text-align: center;
   margin: 0 10px;
 }
+
 footer .social a i {
   color: #ff847c;
 }
+
 footer .social a:hover i {
   color: #ffa8a0;
 }
@@ -881,5 +991,11 @@ footer .social a:hover i {
     opacity: 1;
   }
 }
+/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.css.map */
 
 /*# sourceMappingURL=style.css.map */

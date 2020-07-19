@@ -320,18 +320,37 @@
             <h2>You are invited</h2>
           </div>
           <div class="modal-body">
-            <form action="">
-              <input class="form__input" type="text" placeholder="Name" />
-              <input class="form__input" type="email" placeholder="Email" />
-              <button type="submit" onclick="modal.style.display ='none';">
+            <form action="/">
+              <input
+                class="form__input"
+                type="text"
+                placeholder="Name"
+                required
+              />
+              <input
+                class="form__input"
+                type="email"
+                placeholder="Email"
+                required
+              />
+              <!-- <button type="submit" onclick="modal.style.display ='none';">
                 I'M ATTENDING
-              </button>
+              </button> -->
+              <input
+                style="
+                  background-color: #ff847c;
+                  color: #fff;
+                  border: none;
+                  padding: 20px 40px;
+                  outline-width: 0;
+                "
+                type="submit"
+                value="I'M ATTENDING"
+              />
             </form>
           </div>
         </div>
       </div>
-
-      <section id="#gallery"></section>
     </main>
 
     <footer>
