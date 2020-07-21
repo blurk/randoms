@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 @mixin background($url) {
-  background: url($url) center center no-repeat;
+  background: url($url) rgba(0, 0, 0, 0.2) center center no-repeat;
   background-size: 500px 500px;
+  background-blend-mode: multiply;
 }
 
 * {
@@ -27,7 +28,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.text {
+.intro {
   position: absolute;
   width: 100%;
   text-align: center;
@@ -47,6 +48,20 @@ h2 {
   font-size: 40px;
   line-height: 40px;
 }
+.detail {
+  @extend .intro;
+  opacity: 0;
+  z-index: 3;
+}
+h3 {
+  @extend h1;
+  transform: translateY(-400px);
+}
+h5 {
+  @extend h2;
+  font-size: 25px;
+  transform: translateY(400px);
+}
 .slices {
   position: absolute;
   width: 500px;
@@ -63,6 +78,20 @@ h2 {
     }
     .slice {
       transform: translateY(0);
+      opacity: 1;
+    }
+    .detail {
+      opacity: 1;
+      h3 {
+        transform: translateY(0);
+      }
+      h5 {
+        transform: translateY(0);
+      }
+    }
+
+    &::before,
+    &::after {
       opacity: 1;
     }
   }

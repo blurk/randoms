@@ -24,14 +24,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.text {
+.intro, .detail {
   position: absolute;
   width: 100%;
   text-align: center;
   top: 35%;
 }
 
-h1, h2 {
+h1, h2, h5, h3 {
   font-size: 60px;
   line-height: 60px;
   text-transform: uppercase;
@@ -43,26 +43,43 @@ h1, h2 {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
-h2 {
+h2, h5 {
   font-size: 40px;
   line-height: 40px;
+}
+
+.detail {
+  opacity: 0;
+  z-index: 3;
+}
+
+h3 {
+  -webkit-transform: translateY(-400px);
+          transform: translateY(-400px);
+}
+
+h5 {
+  font-size: 25px;
+  -webkit-transform: translateY(400px);
+          transform: translateY(400px);
 }
 
 .slices {
   position: absolute;
   width: 500px;
   height: 500px;
-  background: url("./ammie-ngo-vcu-OZBxxRk-unsplash.jpg") center center no-repeat;
+  background: url("./ammie-ngo-vcu-OZBxxRk-unsplash.jpg") rgba(0, 0, 0, 0.2) center center no-repeat;
   background-size: 500px 500px;
+  background-blend-mode: multiply;
   cursor: pointer;
 }
 
-.slices:hover h1, .slices:hover h2 {
+.slices:hover h1, .slices:hover h2, .slices:hover h5, .slices:hover h3 {
   -webkit-transform: translateX(-500px);
           transform: translateX(-500px);
 }
 
-.slices:hover h2 {
+.slices:hover h2, .slices:hover h5 {
   -webkit-transform: translateX(500px);
           transform: translateX(500px);
 }
@@ -73,14 +90,33 @@ h2 {
   opacity: 1;
 }
 
+.slices:hover .detail {
+  opacity: 1;
+}
+
+.slices:hover .detail h3 {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.slices:hover .detail h5 {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.slices:hover::before, .slices:hover::after {
+  opacity: 1;
+}
+
 .slices .slice {
   position: relative;
   z-index: 2;
   float: left;
   width: 50px;
   height: 500px;
-  background: url("./ruslan-bardash-8MhejqEghLk-unsplash.jpg") center center no-repeat;
+  background: url("./ruslan-bardash-8MhejqEghLk-unsplash.jpg") rgba(0, 0, 0, 0.2) center center no-repeat;
   background-size: 500px 500px;
+  background-blend-mode: multiply;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
