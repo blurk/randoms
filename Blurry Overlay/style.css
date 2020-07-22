@@ -1,0 +1,2574 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  margin-top: -250px;
+  margin-left: -250px;
+  border-radius: 2px;
+  -webkit-box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  color: #eee;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: url("./tim-wehrmann-pBV3L5fEHZ0-unsplash.jpg") rgba(0, 0, 0, 0.2) center center no-repeat;
+  background-size: 500px 500px;
+  background-blend-mode: multiply;
+}
+
+.trigger {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  width: 500px;
+  height: 10px;
+  left: 0;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+  width: 500px;
+  height: 500px;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+  -webkit-transform-origin: 50% 0%;
+          transform-origin: 50% 0%;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+.text-front {
+  position: absolute;
+  pointer-events: none;
+  width: 500px;
+  top: 40%;
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 700;
+  text-align: center;
+  z-index: 10;
+  color: #fff;
+  text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.4);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.trigger-0 {
+  top: -2px;
+}
+
+.trigger-0:hover ~ .overlay {
+  height: 0px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-1 {
+  top: 0px;
+}
+
+.trigger-1:hover ~ .overlay {
+  height: 2px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-2 {
+  top: 2px;
+}
+
+.trigger-2:hover ~ .overlay {
+  height: 4px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-3 {
+  top: 4px;
+}
+
+.trigger-3:hover ~ .overlay {
+  height: 6px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-4 {
+  top: 6px;
+}
+
+.trigger-4:hover ~ .overlay {
+  height: 8px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-5 {
+  top: 8px;
+}
+
+.trigger-5:hover ~ .overlay {
+  height: 10px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-6 {
+  top: 10px;
+}
+
+.trigger-6:hover ~ .overlay {
+  height: 12px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-7 {
+  top: 12px;
+}
+
+.trigger-7:hover ~ .overlay {
+  height: 14px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-8 {
+  top: 14px;
+}
+
+.trigger-8:hover ~ .overlay {
+  height: 16px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-9 {
+  top: 16px;
+}
+
+.trigger-9:hover ~ .overlay {
+  height: 18px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-10 {
+  top: 18px;
+}
+
+.trigger-10:hover ~ .overlay {
+  height: 20px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-11 {
+  top: 20px;
+}
+
+.trigger-11:hover ~ .overlay {
+  height: 22px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-12 {
+  top: 22px;
+}
+
+.trigger-12:hover ~ .overlay {
+  height: 24px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-13 {
+  top: 24px;
+}
+
+.trigger-13:hover ~ .overlay {
+  height: 26px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-14 {
+  top: 26px;
+}
+
+.trigger-14:hover ~ .overlay {
+  height: 28px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-15 {
+  top: 28px;
+}
+
+.trigger-15:hover ~ .overlay {
+  height: 30px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-16 {
+  top: 30px;
+}
+
+.trigger-16:hover ~ .overlay {
+  height: 32px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-17 {
+  top: 32px;
+}
+
+.trigger-17:hover ~ .overlay {
+  height: 34px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-18 {
+  top: 34px;
+}
+
+.trigger-18:hover ~ .overlay {
+  height: 36px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-19 {
+  top: 36px;
+}
+
+.trigger-19:hover ~ .overlay {
+  height: 38px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-20 {
+  top: 38px;
+}
+
+.trigger-20:hover ~ .overlay {
+  height: 40px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-21 {
+  top: 40px;
+}
+
+.trigger-21:hover ~ .overlay {
+  height: 42px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-22 {
+  top: 42px;
+}
+
+.trigger-22:hover ~ .overlay {
+  height: 44px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-23 {
+  top: 44px;
+}
+
+.trigger-23:hover ~ .overlay {
+  height: 46px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-24 {
+  top: 46px;
+}
+
+.trigger-24:hover ~ .overlay {
+  height: 48px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-25 {
+  top: 48px;
+}
+
+.trigger-25:hover ~ .overlay {
+  height: 50px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-26 {
+  top: 50px;
+}
+
+.trigger-26:hover ~ .overlay {
+  height: 52px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-27 {
+  top: 52px;
+}
+
+.trigger-27:hover ~ .overlay {
+  height: 54px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-28 {
+  top: 54px;
+}
+
+.trigger-28:hover ~ .overlay {
+  height: 56px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-29 {
+  top: 56px;
+}
+
+.trigger-29:hover ~ .overlay {
+  height: 58px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-30 {
+  top: 58px;
+}
+
+.trigger-30:hover ~ .overlay {
+  height: 60px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-31 {
+  top: 60px;
+}
+
+.trigger-31:hover ~ .overlay {
+  height: 62px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-32 {
+  top: 62px;
+}
+
+.trigger-32:hover ~ .overlay {
+  height: 64px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-33 {
+  top: 64px;
+}
+
+.trigger-33:hover ~ .overlay {
+  height: 66px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-34 {
+  top: 66px;
+}
+
+.trigger-34:hover ~ .overlay {
+  height: 68px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-35 {
+  top: 68px;
+}
+
+.trigger-35:hover ~ .overlay {
+  height: 70px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-36 {
+  top: 70px;
+}
+
+.trigger-36:hover ~ .overlay {
+  height: 72px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-37 {
+  top: 72px;
+}
+
+.trigger-37:hover ~ .overlay {
+  height: 74px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-38 {
+  top: 74px;
+}
+
+.trigger-38:hover ~ .overlay {
+  height: 76px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-39 {
+  top: 76px;
+}
+
+.trigger-39:hover ~ .overlay {
+  height: 78px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-40 {
+  top: 78px;
+}
+
+.trigger-40:hover ~ .overlay {
+  height: 80px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-41 {
+  top: 80px;
+}
+
+.trigger-41:hover ~ .overlay {
+  height: 82px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-42 {
+  top: 82px;
+}
+
+.trigger-42:hover ~ .overlay {
+  height: 84px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-43 {
+  top: 84px;
+}
+
+.trigger-43:hover ~ .overlay {
+  height: 86px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-44 {
+  top: 86px;
+}
+
+.trigger-44:hover ~ .overlay {
+  height: 88px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-45 {
+  top: 88px;
+}
+
+.trigger-45:hover ~ .overlay {
+  height: 90px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-46 {
+  top: 90px;
+}
+
+.trigger-46:hover ~ .overlay {
+  height: 92px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-47 {
+  top: 92px;
+}
+
+.trigger-47:hover ~ .overlay {
+  height: 94px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-48 {
+  top: 94px;
+}
+
+.trigger-48:hover ~ .overlay {
+  height: 96px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-49 {
+  top: 96px;
+}
+
+.trigger-49:hover ~ .overlay {
+  height: 98px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-50 {
+  top: 98px;
+}
+
+.trigger-50:hover ~ .overlay {
+  height: 100px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-51 {
+  top: 100px;
+}
+
+.trigger-51:hover ~ .overlay {
+  height: 102px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-52 {
+  top: 102px;
+}
+
+.trigger-52:hover ~ .overlay {
+  height: 104px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-53 {
+  top: 104px;
+}
+
+.trigger-53:hover ~ .overlay {
+  height: 106px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-54 {
+  top: 106px;
+}
+
+.trigger-54:hover ~ .overlay {
+  height: 108px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-55 {
+  top: 108px;
+}
+
+.trigger-55:hover ~ .overlay {
+  height: 110px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-56 {
+  top: 110px;
+}
+
+.trigger-56:hover ~ .overlay {
+  height: 112px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-57 {
+  top: 112px;
+}
+
+.trigger-57:hover ~ .overlay {
+  height: 114px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-58 {
+  top: 114px;
+}
+
+.trigger-58:hover ~ .overlay {
+  height: 116px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-59 {
+  top: 116px;
+}
+
+.trigger-59:hover ~ .overlay {
+  height: 118px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-60 {
+  top: 118px;
+}
+
+.trigger-60:hover ~ .overlay {
+  height: 120px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-61 {
+  top: 120px;
+}
+
+.trigger-61:hover ~ .overlay {
+  height: 122px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-62 {
+  top: 122px;
+}
+
+.trigger-62:hover ~ .overlay {
+  height: 124px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-63 {
+  top: 124px;
+}
+
+.trigger-63:hover ~ .overlay {
+  height: 126px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-64 {
+  top: 126px;
+}
+
+.trigger-64:hover ~ .overlay {
+  height: 128px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-65 {
+  top: 128px;
+}
+
+.trigger-65:hover ~ .overlay {
+  height: 130px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-66 {
+  top: 130px;
+}
+
+.trigger-66:hover ~ .overlay {
+  height: 132px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-67 {
+  top: 132px;
+}
+
+.trigger-67:hover ~ .overlay {
+  height: 134px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-68 {
+  top: 134px;
+}
+
+.trigger-68:hover ~ .overlay {
+  height: 136px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-69 {
+  top: 136px;
+}
+
+.trigger-69:hover ~ .overlay {
+  height: 138px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-70 {
+  top: 138px;
+}
+
+.trigger-70:hover ~ .overlay {
+  height: 140px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-71 {
+  top: 140px;
+}
+
+.trigger-71:hover ~ .overlay {
+  height: 142px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-72 {
+  top: 142px;
+}
+
+.trigger-72:hover ~ .overlay {
+  height: 144px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-73 {
+  top: 144px;
+}
+
+.trigger-73:hover ~ .overlay {
+  height: 146px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-74 {
+  top: 146px;
+}
+
+.trigger-74:hover ~ .overlay {
+  height: 148px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-75 {
+  top: 148px;
+}
+
+.trigger-75:hover ~ .overlay {
+  height: 150px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-76 {
+  top: 150px;
+}
+
+.trigger-76:hover ~ .overlay {
+  height: 152px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-77 {
+  top: 152px;
+}
+
+.trigger-77:hover ~ .overlay {
+  height: 154px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-78 {
+  top: 154px;
+}
+
+.trigger-78:hover ~ .overlay {
+  height: 156px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-79 {
+  top: 156px;
+}
+
+.trigger-79:hover ~ .overlay {
+  height: 158px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-80 {
+  top: 158px;
+}
+
+.trigger-80:hover ~ .overlay {
+  height: 160px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-81 {
+  top: 160px;
+}
+
+.trigger-81:hover ~ .overlay {
+  height: 162px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-82 {
+  top: 162px;
+}
+
+.trigger-82:hover ~ .overlay {
+  height: 164px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-83 {
+  top: 164px;
+}
+
+.trigger-83:hover ~ .overlay {
+  height: 166px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-84 {
+  top: 166px;
+}
+
+.trigger-84:hover ~ .overlay {
+  height: 168px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-85 {
+  top: 168px;
+}
+
+.trigger-85:hover ~ .overlay {
+  height: 170px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-86 {
+  top: 170px;
+}
+
+.trigger-86:hover ~ .overlay {
+  height: 172px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-87 {
+  top: 172px;
+}
+
+.trigger-87:hover ~ .overlay {
+  height: 174px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-88 {
+  top: 174px;
+}
+
+.trigger-88:hover ~ .overlay {
+  height: 176px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-89 {
+  top: 176px;
+}
+
+.trigger-89:hover ~ .overlay {
+  height: 178px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-90 {
+  top: 178px;
+}
+
+.trigger-90:hover ~ .overlay {
+  height: 180px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-91 {
+  top: 180px;
+}
+
+.trigger-91:hover ~ .overlay {
+  height: 182px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-92 {
+  top: 182px;
+}
+
+.trigger-92:hover ~ .overlay {
+  height: 184px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-93 {
+  top: 184px;
+}
+
+.trigger-93:hover ~ .overlay {
+  height: 186px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-94 {
+  top: 186px;
+}
+
+.trigger-94:hover ~ .overlay {
+  height: 188px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-95 {
+  top: 188px;
+}
+
+.trigger-95:hover ~ .overlay {
+  height: 190px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-96 {
+  top: 190px;
+}
+
+.trigger-96:hover ~ .overlay {
+  height: 192px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-97 {
+  top: 192px;
+}
+
+.trigger-97:hover ~ .overlay {
+  height: 194px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-98 {
+  top: 194px;
+}
+
+.trigger-98:hover ~ .overlay {
+  height: 196px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-99 {
+  top: 196px;
+}
+
+.trigger-99:hover ~ .overlay {
+  height: 198px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-100 {
+  top: 198px;
+}
+
+.trigger-100:hover ~ .overlay {
+  height: 200px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-101 {
+  top: 200px;
+}
+
+.trigger-101:hover ~ .overlay {
+  height: 202px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-102 {
+  top: 202px;
+}
+
+.trigger-102:hover ~ .overlay {
+  height: 204px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-103 {
+  top: 204px;
+}
+
+.trigger-103:hover ~ .overlay {
+  height: 206px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-104 {
+  top: 206px;
+}
+
+.trigger-104:hover ~ .overlay {
+  height: 208px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-105 {
+  top: 208px;
+}
+
+.trigger-105:hover ~ .overlay {
+  height: 210px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-106 {
+  top: 210px;
+}
+
+.trigger-106:hover ~ .overlay {
+  height: 212px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-107 {
+  top: 212px;
+}
+
+.trigger-107:hover ~ .overlay {
+  height: 214px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-108 {
+  top: 214px;
+}
+
+.trigger-108:hover ~ .overlay {
+  height: 216px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-109 {
+  top: 216px;
+}
+
+.trigger-109:hover ~ .overlay {
+  height: 218px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-110 {
+  top: 218px;
+}
+
+.trigger-110:hover ~ .overlay {
+  height: 220px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-111 {
+  top: 220px;
+}
+
+.trigger-111:hover ~ .overlay {
+  height: 222px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-112 {
+  top: 222px;
+}
+
+.trigger-112:hover ~ .overlay {
+  height: 224px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-113 {
+  top: 224px;
+}
+
+.trigger-113:hover ~ .overlay {
+  height: 226px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-114 {
+  top: 226px;
+}
+
+.trigger-114:hover ~ .overlay {
+  height: 228px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-115 {
+  top: 228px;
+}
+
+.trigger-115:hover ~ .overlay {
+  height: 230px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-116 {
+  top: 230px;
+}
+
+.trigger-116:hover ~ .overlay {
+  height: 232px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-117 {
+  top: 232px;
+}
+
+.trigger-117:hover ~ .overlay {
+  height: 234px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-118 {
+  top: 234px;
+}
+
+.trigger-118:hover ~ .overlay {
+  height: 236px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-119 {
+  top: 236px;
+}
+
+.trigger-119:hover ~ .overlay {
+  height: 238px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-120 {
+  top: 238px;
+}
+
+.trigger-120:hover ~ .overlay {
+  height: 240px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-121 {
+  top: 240px;
+}
+
+.trigger-121:hover ~ .overlay {
+  height: 242px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-122 {
+  top: 242px;
+}
+
+.trigger-122:hover ~ .overlay {
+  height: 244px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-123 {
+  top: 244px;
+}
+
+.trigger-123:hover ~ .overlay {
+  height: 246px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-124 {
+  top: 246px;
+}
+
+.trigger-124:hover ~ .overlay {
+  height: 248px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-125 {
+  top: 248px;
+}
+
+.trigger-125:hover ~ .overlay {
+  height: 250px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-126 {
+  top: 250px;
+}
+
+.trigger-126:hover ~ .overlay {
+  height: 252px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-127 {
+  top: 252px;
+}
+
+.trigger-127:hover ~ .overlay {
+  height: 254px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-128 {
+  top: 254px;
+}
+
+.trigger-128:hover ~ .overlay {
+  height: 256px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-129 {
+  top: 256px;
+}
+
+.trigger-129:hover ~ .overlay {
+  height: 258px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-130 {
+  top: 258px;
+}
+
+.trigger-130:hover ~ .overlay {
+  height: 260px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-131 {
+  top: 260px;
+}
+
+.trigger-131:hover ~ .overlay {
+  height: 262px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-132 {
+  top: 262px;
+}
+
+.trigger-132:hover ~ .overlay {
+  height: 264px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-133 {
+  top: 264px;
+}
+
+.trigger-133:hover ~ .overlay {
+  height: 266px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-134 {
+  top: 266px;
+}
+
+.trigger-134:hover ~ .overlay {
+  height: 268px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-135 {
+  top: 268px;
+}
+
+.trigger-135:hover ~ .overlay {
+  height: 270px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-136 {
+  top: 270px;
+}
+
+.trigger-136:hover ~ .overlay {
+  height: 272px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-137 {
+  top: 272px;
+}
+
+.trigger-137:hover ~ .overlay {
+  height: 274px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-138 {
+  top: 274px;
+}
+
+.trigger-138:hover ~ .overlay {
+  height: 276px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-139 {
+  top: 276px;
+}
+
+.trigger-139:hover ~ .overlay {
+  height: 278px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-140 {
+  top: 278px;
+}
+
+.trigger-140:hover ~ .overlay {
+  height: 280px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-141 {
+  top: 280px;
+}
+
+.trigger-141:hover ~ .overlay {
+  height: 282px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-142 {
+  top: 282px;
+}
+
+.trigger-142:hover ~ .overlay {
+  height: 284px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-143 {
+  top: 284px;
+}
+
+.trigger-143:hover ~ .overlay {
+  height: 286px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-144 {
+  top: 286px;
+}
+
+.trigger-144:hover ~ .overlay {
+  height: 288px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-145 {
+  top: 288px;
+}
+
+.trigger-145:hover ~ .overlay {
+  height: 290px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-146 {
+  top: 290px;
+}
+
+.trigger-146:hover ~ .overlay {
+  height: 292px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-147 {
+  top: 292px;
+}
+
+.trigger-147:hover ~ .overlay {
+  height: 294px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-148 {
+  top: 294px;
+}
+
+.trigger-148:hover ~ .overlay {
+  height: 296px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-149 {
+  top: 296px;
+}
+
+.trigger-149:hover ~ .overlay {
+  height: 298px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-150 {
+  top: 298px;
+}
+
+.trigger-150:hover ~ .overlay {
+  height: 300px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-151 {
+  top: 300px;
+}
+
+.trigger-151:hover ~ .overlay {
+  height: 302px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-152 {
+  top: 302px;
+}
+
+.trigger-152:hover ~ .overlay {
+  height: 304px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-153 {
+  top: 304px;
+}
+
+.trigger-153:hover ~ .overlay {
+  height: 306px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-154 {
+  top: 306px;
+}
+
+.trigger-154:hover ~ .overlay {
+  height: 308px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-155 {
+  top: 308px;
+}
+
+.trigger-155:hover ~ .overlay {
+  height: 310px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-156 {
+  top: 310px;
+}
+
+.trigger-156:hover ~ .overlay {
+  height: 312px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-157 {
+  top: 312px;
+}
+
+.trigger-157:hover ~ .overlay {
+  height: 314px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-158 {
+  top: 314px;
+}
+
+.trigger-158:hover ~ .overlay {
+  height: 316px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-159 {
+  top: 316px;
+}
+
+.trigger-159:hover ~ .overlay {
+  height: 318px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-160 {
+  top: 318px;
+}
+
+.trigger-160:hover ~ .overlay {
+  height: 320px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-161 {
+  top: 320px;
+}
+
+.trigger-161:hover ~ .overlay {
+  height: 322px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-162 {
+  top: 322px;
+}
+
+.trigger-162:hover ~ .overlay {
+  height: 324px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-163 {
+  top: 324px;
+}
+
+.trigger-163:hover ~ .overlay {
+  height: 326px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-164 {
+  top: 326px;
+}
+
+.trigger-164:hover ~ .overlay {
+  height: 328px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-165 {
+  top: 328px;
+}
+
+.trigger-165:hover ~ .overlay {
+  height: 330px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-166 {
+  top: 330px;
+}
+
+.trigger-166:hover ~ .overlay {
+  height: 332px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-167 {
+  top: 332px;
+}
+
+.trigger-167:hover ~ .overlay {
+  height: 334px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-168 {
+  top: 334px;
+}
+
+.trigger-168:hover ~ .overlay {
+  height: 336px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-169 {
+  top: 336px;
+}
+
+.trigger-169:hover ~ .overlay {
+  height: 338px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-170 {
+  top: 338px;
+}
+
+.trigger-170:hover ~ .overlay {
+  height: 340px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-171 {
+  top: 340px;
+}
+
+.trigger-171:hover ~ .overlay {
+  height: 342px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-172 {
+  top: 342px;
+}
+
+.trigger-172:hover ~ .overlay {
+  height: 344px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-173 {
+  top: 344px;
+}
+
+.trigger-173:hover ~ .overlay {
+  height: 346px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-174 {
+  top: 346px;
+}
+
+.trigger-174:hover ~ .overlay {
+  height: 348px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-175 {
+  top: 348px;
+}
+
+.trigger-175:hover ~ .overlay {
+  height: 350px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-176 {
+  top: 350px;
+}
+
+.trigger-176:hover ~ .overlay {
+  height: 352px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-177 {
+  top: 352px;
+}
+
+.trigger-177:hover ~ .overlay {
+  height: 354px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-178 {
+  top: 354px;
+}
+
+.trigger-178:hover ~ .overlay {
+  height: 356px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-179 {
+  top: 356px;
+}
+
+.trigger-179:hover ~ .overlay {
+  height: 358px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-180 {
+  top: 358px;
+}
+
+.trigger-180:hover ~ .overlay {
+  height: 360px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-181 {
+  top: 360px;
+}
+
+.trigger-181:hover ~ .overlay {
+  height: 362px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-182 {
+  top: 362px;
+}
+
+.trigger-182:hover ~ .overlay {
+  height: 364px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-183 {
+  top: 364px;
+}
+
+.trigger-183:hover ~ .overlay {
+  height: 366px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-184 {
+  top: 366px;
+}
+
+.trigger-184:hover ~ .overlay {
+  height: 368px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-185 {
+  top: 368px;
+}
+
+.trigger-185:hover ~ .overlay {
+  height: 370px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-186 {
+  top: 370px;
+}
+
+.trigger-186:hover ~ .overlay {
+  height: 372px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-187 {
+  top: 372px;
+}
+
+.trigger-187:hover ~ .overlay {
+  height: 374px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-188 {
+  top: 374px;
+}
+
+.trigger-188:hover ~ .overlay {
+  height: 376px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-189 {
+  top: 376px;
+}
+
+.trigger-189:hover ~ .overlay {
+  height: 378px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-190 {
+  top: 378px;
+}
+
+.trigger-190:hover ~ .overlay {
+  height: 380px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-191 {
+  top: 380px;
+}
+
+.trigger-191:hover ~ .overlay {
+  height: 382px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-192 {
+  top: 382px;
+}
+
+.trigger-192:hover ~ .overlay {
+  height: 384px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-193 {
+  top: 384px;
+}
+
+.trigger-193:hover ~ .overlay {
+  height: 386px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-194 {
+  top: 386px;
+}
+
+.trigger-194:hover ~ .overlay {
+  height: 388px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-195 {
+  top: 388px;
+}
+
+.trigger-195:hover ~ .overlay {
+  height: 390px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-196 {
+  top: 390px;
+}
+
+.trigger-196:hover ~ .overlay {
+  height: 392px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-197 {
+  top: 392px;
+}
+
+.trigger-197:hover ~ .overlay {
+  height: 394px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-198 {
+  top: 394px;
+}
+
+.trigger-198:hover ~ .overlay {
+  height: 396px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-199 {
+  top: 396px;
+}
+
+.trigger-199:hover ~ .overlay {
+  height: 398px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-200 {
+  top: 398px;
+}
+
+.trigger-200:hover ~ .overlay {
+  height: 400px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-201 {
+  top: 400px;
+}
+
+.trigger-201:hover ~ .overlay {
+  height: 402px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-202 {
+  top: 402px;
+}
+
+.trigger-202:hover ~ .overlay {
+  height: 404px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-203 {
+  top: 404px;
+}
+
+.trigger-203:hover ~ .overlay {
+  height: 406px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-204 {
+  top: 406px;
+}
+
+.trigger-204:hover ~ .overlay {
+  height: 408px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-205 {
+  top: 408px;
+}
+
+.trigger-205:hover ~ .overlay {
+  height: 410px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-206 {
+  top: 410px;
+}
+
+.trigger-206:hover ~ .overlay {
+  height: 412px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-207 {
+  top: 412px;
+}
+
+.trigger-207:hover ~ .overlay {
+  height: 414px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-208 {
+  top: 414px;
+}
+
+.trigger-208:hover ~ .overlay {
+  height: 416px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-209 {
+  top: 416px;
+}
+
+.trigger-209:hover ~ .overlay {
+  height: 418px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-210 {
+  top: 418px;
+}
+
+.trigger-210:hover ~ .overlay {
+  height: 420px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-211 {
+  top: 420px;
+}
+
+.trigger-211:hover ~ .overlay {
+  height: 422px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-212 {
+  top: 422px;
+}
+
+.trigger-212:hover ~ .overlay {
+  height: 424px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-213 {
+  top: 424px;
+}
+
+.trigger-213:hover ~ .overlay {
+  height: 426px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-214 {
+  top: 426px;
+}
+
+.trigger-214:hover ~ .overlay {
+  height: 428px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-215 {
+  top: 428px;
+}
+
+.trigger-215:hover ~ .overlay {
+  height: 430px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-216 {
+  top: 430px;
+}
+
+.trigger-216:hover ~ .overlay {
+  height: 432px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-217 {
+  top: 432px;
+}
+
+.trigger-217:hover ~ .overlay {
+  height: 434px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-218 {
+  top: 434px;
+}
+
+.trigger-218:hover ~ .overlay {
+  height: 436px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-219 {
+  top: 436px;
+}
+
+.trigger-219:hover ~ .overlay {
+  height: 438px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-220 {
+  top: 438px;
+}
+
+.trigger-220:hover ~ .overlay {
+  height: 440px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-221 {
+  top: 440px;
+}
+
+.trigger-221:hover ~ .overlay {
+  height: 442px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-222 {
+  top: 442px;
+}
+
+.trigger-222:hover ~ .overlay {
+  height: 444px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-223 {
+  top: 444px;
+}
+
+.trigger-223:hover ~ .overlay {
+  height: 446px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-224 {
+  top: 446px;
+}
+
+.trigger-224:hover ~ .overlay {
+  height: 448px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-225 {
+  top: 448px;
+}
+
+.trigger-225:hover ~ .overlay {
+  height: 450px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-226 {
+  top: 450px;
+}
+
+.trigger-226:hover ~ .overlay {
+  height: 452px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-227 {
+  top: 452px;
+}
+
+.trigger-227:hover ~ .overlay {
+  height: 454px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-228 {
+  top: 454px;
+}
+
+.trigger-228:hover ~ .overlay {
+  height: 456px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-229 {
+  top: 456px;
+}
+
+.trigger-229:hover ~ .overlay {
+  height: 458px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-230 {
+  top: 458px;
+}
+
+.trigger-230:hover ~ .overlay {
+  height: 460px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-231 {
+  top: 460px;
+}
+
+.trigger-231:hover ~ .overlay {
+  height: 462px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-232 {
+  top: 462px;
+}
+
+.trigger-232:hover ~ .overlay {
+  height: 464px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-233 {
+  top: 464px;
+}
+
+.trigger-233:hover ~ .overlay {
+  height: 466px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-234 {
+  top: 466px;
+}
+
+.trigger-234:hover ~ .overlay {
+  height: 468px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-235 {
+  top: 468px;
+}
+
+.trigger-235:hover ~ .overlay {
+  height: 470px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-236 {
+  top: 470px;
+}
+
+.trigger-236:hover ~ .overlay {
+  height: 472px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-237 {
+  top: 472px;
+}
+
+.trigger-237:hover ~ .overlay {
+  height: 474px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-238 {
+  top: 474px;
+}
+
+.trigger-238:hover ~ .overlay {
+  height: 476px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-239 {
+  top: 476px;
+}
+
+.trigger-239:hover ~ .overlay {
+  height: 478px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-240 {
+  top: 478px;
+}
+
+.trigger-240:hover ~ .overlay {
+  height: 480px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-241 {
+  top: 480px;
+}
+
+.trigger-241:hover ~ .overlay {
+  height: 482px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-242 {
+  top: 482px;
+}
+
+.trigger-242:hover ~ .overlay {
+  height: 484px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-243 {
+  top: 484px;
+}
+
+.trigger-243:hover ~ .overlay {
+  height: 486px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-244 {
+  top: 486px;
+}
+
+.trigger-244:hover ~ .overlay {
+  height: 488px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-245 {
+  top: 488px;
+}
+
+.trigger-245:hover ~ .overlay {
+  height: 490px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-246 {
+  top: 490px;
+}
+
+.trigger-246:hover ~ .overlay {
+  height: 492px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-247 {
+  top: 492px;
+}
+
+.trigger-247:hover ~ .overlay {
+  height: 494px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-248 {
+  top: 494px;
+}
+
+.trigger-248:hover ~ .overlay {
+  height: 496px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-249 {
+  top: 496px;
+}
+
+.trigger-249:hover ~ .overlay {
+  height: 498px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+
+.trigger-250 {
+  top: 498px;
+}
+
+.trigger-250:hover ~ .overlay {
+  height: 500px;
+  -webkit-transition: initial;
+  transition: initial;
+}
+/*# sourceMappingURL=style.css.map */
