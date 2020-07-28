@@ -1,0 +1,60 @@
+@font-face {
+  font-family: "Acrade Classic";
+  src: url("./ARCADECLASSIC.TTF") format("truetype");
+}
+
+html {
+  font-family: "Acrade Classic", monospace;
+  font-size: 20px;
+}
+
+.grid {
+  height: 400px;
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px auto 10px;
+  background-color: #fff;
+  border: 5px solid #fff;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 6px 0px rgba(17, 17, 17, 1);
+  -moz-box-shadow: 2px 2px 6px 0px rgba(17, 17, 17, 1);
+  box-shadow: 2px 2px 8px 0px rgba(17, 17, 17, 1);
+}
+
+h1 {
+  text-align: center;
+}
+
+.grid div {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.bomb {
+  border: 5px solid;
+}
+
+.initial {
+  border: 5px solid;
+  border-color: #f5f3eb #bab7a9 #bab7a9 #fff9db;
+  box-sizing: border-box;
+}
+
+.checked {
+  border: 5px solid;
+  color: #fff;
+  background-color: #7cf38a;
+  border-color: #67f178 #57ef69 #44ee58 #32ec47;
+}
+
+.flag {
+  border: 5px solid;
+  background-color: #fff170;
+  border-color: #ffee4c #ffed47 #ffeb33 #ffe91f;
+}
