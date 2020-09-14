@@ -1,0 +1,35 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 400px;
+  background-color: blue;
+  margin: 50px auto;
+}
+
+.grid div {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  font-size: 4rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.top-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  height: 100%;
+}
+
+.title {
+  font-size: 80px;
+}
+
+#result {
+  text-align: center;
+  height: 50px;
+}
