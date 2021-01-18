@@ -1,0 +1,44 @@
+$green: #37d493;
+$grey: #444;
+$speed: 5s;
+$e-width: 420px;
+$e-w-offset: -10px;
+$e-height: 400px;
+
+.frame {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	height: 400px;
+	margin-top: -200px;
+	margin-left: -200px;
+	border-radius: 2px;
+	box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow: hidden;
+}
+
+.top {
+	position: absolute;
+	width: 100%;
+	height: 200px;
+	top: 0;
+	left: 0;
+	background-color: $grey;
+}
+
+.bottom {
+	@extend .top;
+	top: 50%;
+	background-color: $green;
+}
+
+.eclipse {
+	position: absolute;
+	z-index: 2;
+	width: $e-width;
+	height: $e-height;
+	top: 0;
+}
