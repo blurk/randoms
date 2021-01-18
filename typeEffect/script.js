@@ -1,4 +1,4 @@
-const contents = ["Sinh Nguyen", "A Front-end Developer", "A Desginer"];
+const contents = ["Sinh Nguyen", "A Front-end Geek", "A Ui/UX Geek"];
 
 let count = 0;
 let index = 0;
