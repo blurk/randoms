@@ -4,4 +4,4 @@
 
 ![cute gif](./tumblr_mvnd6kfRpo1sibpv8o1_540.gif)
 
-[Link to them](https://blurk.github.io/Pet-Projects/)
+[Link to them](https://randoms-n6ustgxau.vercel.app/)
