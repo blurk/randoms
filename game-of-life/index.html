@@ -13,6 +13,7 @@
       padding: 0;
       border: none;
       max-height: 100vh;
+      max-width: 100%;
       height: 100%;
     }
   </style>
@@ -20,13 +21,63 @@
     <canvas id="canvas"></canvas>
 
     <script>
+      const CELL_SIZE = 10;
+      const FPS = 60;
+      const STOP_TIME = 100;
+      const COLOR_BG = "rgba(0,0,0,1)";
+
+      class Drawer {
+        constructor(/** @type {HTMLCanvasElement} */ canvas) {
+          this.canvas = canvas;
+          this.context = this.canvas.getContext("2d");
+          this.canvas.width = document.documentElement.offsetWidth;
+          this.canvas.height = document.documentElement.offsetHeight;
+        }
+
+        drawBackground() {
+          this.context.fillStyle = COLOR_BG;
+          this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        }
+
+        drawCell(x, y, size) {
+          this.context.fillStyle = `rgba(
+      	${Math.max(59, x * 3)},
+      	${Math.max(61, y * 2)},
+      	${Math.max(67, (x + y) * 1)},
+      	1)`;
+
+          // this.context.fillStyle = COLOR_CELL;
+
+          this.context.fillRect(x * size, y * size, size, size);
+        }
+
+        drawGrid(cols, rows, cellSize) {
+          for (let i = 0; i < rows; i++) {
+            this.drawGridLine(i * cellSize, i * cellSize, 0, cols * cellSize);
+          }
+
+          for (let j = 0; j < cols; j++) {
+            this.drawGridLine(0, rows * cellSize, j * cellSize, j * cellSize);
+          }
+        }
+
+        drawGridLine(x1, x2, y1, y2) {
+          this.context.beginPath();
+          this.context.lineWidth = 2;
+          this.context.moveTo(x1, y1);
+          this.context.lineTo(x2, y2);
+          this.context.strokeStyle = "rgba(255, 255, 255, 0.1)";
+          this.context.stroke();
+        }
+      }
+
       class Cell {
         #isAlive = false;
         #neighbors = 0;
 
-        constructor(ctx, x, y, size) {
-          /** @type {CanvasRenderingContext2D} */
-          this.ctx = ctx;
+        constructor(drawer, x, y, size) {
+          /** @type {Drawer} */
+          this.drawer = drawer;
           this.x = x;
           this.y = y;
           this.size = size;
@@ -34,17 +85,7 @@
 
         draw() {
           if (this.#isAlive) {
-            this.ctx.fillStyle = `rgba(
-							${Math.max(50, this.x * 4)},
-							${Math.max(100, this.y * 4)},
-							${Math.max(200, (this.x + this.y) * 2)},
-							1)`;
-            this.ctx.fillRect(
-              this.x * this.size,
-              this.y * this.size,
-              this.size,
-              this.size
-            );
+            this.drawer.drawCell(this.x, this.y, this.size);
           }
         }
 
@@ -77,14 +118,18 @@
       }
 
       class Game {
-        #cellSize = 10;
+        #cellSize = CELL_SIZE;
+        #timeoutID = -1;
         /** @type {Cell[][]} */ #cells = [];
 
         constructor(/** @type {HTMLCanvasElement} */ canvas) {
           this.canvas = canvas;
-          this.ctx = this.canvas.getContext("2d");
-          this.canvas.width = document.documentElement.offsetWidth;
-          this.canvas.height = document.documentElement.offsetHeight;
+          this.drawer = new Drawer(this.canvas);
+
+          this.run = this.run.bind(this);
+          this.handleCanvasClick = this.handleCanvasClick.bind(this);
+
+          this.canvas.addEventListener("click", this.handleCanvasClick);
         }
 
         get size() {
@@ -95,9 +140,52 @@
           };
         }
 
-        drawBoard() {
-          this.ctx.fillStyle = "rgba(0,0,0,1)";
-          this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        get timeoutID() {
+          return this.#timeoutID;
+        }
+
+        set timeoutID(timeoutID) {
+          this.#timeoutID = timeoutID;
+        }
+
+        handleCanvasClick(event) {
+          const { clientX, clientY } = event;
+          const x = Math.floor(clientX / this.#cellSize);
+          const y = Math.floor(clientY / this.#cellSize);
+
+          const template = [
+            [x, y],
+            [x, y - 1],
+            [x + 1, y - 1],
+            [x + 1, y],
+          ];
+
+          this.stop();
+
+          for (let [x, y] of template) {
+            if (x < 0) {
+              x = this.size.rows - 1;
+            }
+
+            if (y < 0) {
+              y = this.size.cols - 1;
+            }
+
+            if (x >= this.size.rows) {
+              x = 0;
+            }
+
+            if (y >= this.size.cols) {
+              y = 0;
+            }
+
+            this.#cells[x][y].isAlive = true;
+            this.#cells[x][y].draw();
+          }
+
+          setTimeout(() => {
+            this.resume();
+          }, STOP_TIME);
         }
 
         generateCells() {
@@ -105,7 +193,12 @@
             this.#cells[i] = [];
 
             for (let j = 0; j < this.size.cols; j++) {
-              this.#cells[i][j] = new Cell(this.ctx, i, j, this.size.cellSize);
+              this.#cells[i][j] = new Cell(
+                this.drawer,
+                i,
+                j,
+                this.size.cellSize
+              );
               this.#cells[i][j].isAlive = Math.random() > 0.9;
               this.#cells[i][j].draw();
             }
@@ -127,9 +220,6 @@
           ];
 
           for (let [x, y] of neighborCoordinates) {
-            const xOutOfBound = x < 0 || x >= this.size.rows;
-            const yOutOfBound = y < 0 || y >= this.size.cols;
-
             if (x < 0) {
               x = this.size.rows - 1;
             }
@@ -169,25 +259,35 @@
         }
 
         run() {
-          this.drawBoard();
-          this.updateCells();
+          this.drawer.drawBackground();
+          this.drawer.drawGrid(
+            this.size.cols,
+            this.size.rows,
+            this.size.cellSize
+          );
 
-          setTimeout(() => {
-            requestAnimationFrame(() => {
-              this.run();
-            });
-          }, 1000 / 60);
+          if (this.#cells.length > 0) {
+            this.updateCells();
+          } else {
+            this.generateCells();
+          }
+
+          this.#timeoutID = setTimeout(() => {
+            requestAnimationFrame(this.run);
+          }, 1000 / FPS);
         }
 
-        init() {
-          this.drawBoard();
-          this.generateCells();
+        stop() {
+          clearTimeout(this.#timeoutID);
+        }
 
+        resume() {
           this.run();
         }
       }
+
       const game = new Game(document.getElementById("canvas"));
-      game.init();
+      game.run();
     </script>
   </body>
 </html>
