@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Pen</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      textarea {
+        resize: none;
+        padding: 0.8rem;
+        width: 100%;
+        height: 100%;
+        background-color: #222;
+        color: #eee;
+        font-size: large;
+      }
+
+      fieldset {
+        border: none;
+      }
+
+      body {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      #result {
+        grid-column: 1/-1;
+        grid-row: 2/-1;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <fieldset>
+      <legend>
+        <label for="html">HTML</label>
+      </legend>
+      <textarea
+        name="html"
+        id="html"
+        spellcheck="false"
+        autocorrect="off"
+        autocapitalize="off"
+        translate="no"
+      ></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>
+        <label for="css">CSS</label>
+      </legend>
+      <textarea
+        name="css"
+        id="css"
+        spellcheck="false"
+        autocorrect="off"
+        autocapitalize="off"
+        translate="no"
+      ></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>
+        <label for="js">JS</label>
+      </legend>
+      <textarea
+        name="js"
+        id="js"
+        spellcheck="false"
+        autocorrect="off"
+        autocapitalize="off"
+        translate="no"
+      ></textarea>
+    </fieldset>
+
+    <iframe id="result" frameborder="0"></iframe>
+
+    <script>
+      const html = document.getElementById("html");
+      const css = document.getElementById("css");
+      const js = document.getElementById("js");
+      let result = document.getElementById("result");
+
+      let debounce;
+
+      document.addEventListener("input", (e) => {
+        if (e.target !== html && e.target !== css && e.target !== js) {
+          return;
+        }
+
+        clearTimeout(debounce);
+
+        debounce = setTimeout(updateIframe, 500);
+      });
+
+      function updateIframe() {
+        let clone = result.cloneNode();
+        result.replaceWith(clone);
+        result = clone;
+
+        // Render
+        let page = [
+          `<!doctype html><html><head><meta charset="utf-8"><style>${css.value}<\/style></head><body>${html.value}<script type="module">${js.value}<\/script></body></html>`,
+        ];
+        const blob = new Blob(page, { type: "text/html" });
+        let burl = URL.createObjectURL(blob);
+        result.setAttribute("src", burl);
+        setTimeout(URL.revokeObjectURL, 100, burl);
+      }
+    </script>
+  </body>
+</html>
